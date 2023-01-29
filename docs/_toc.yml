@@ -6,9 +6,14 @@ root: intro
 parts:
 - caption: Machine Learning
   chapters:
-  - file: machine_learning/projects-machine-learning
+  - file: machine_learning/overview-machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
+- caption: iOS App Development
+  chapters:
+  - file: swift_ui/overview-swift-ui
+    sections:
+    - file: swift_ui/recipe-list
 - caption: Jupyter-book examples
   chapters:
   - file: jupyter_book_examples/markdown
