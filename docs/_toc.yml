@@ -1,9 +1,14 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+# Learn more at https://jupyterbook.org/en/stable/structure/toc.html
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+- part: Machine Learning
+  chapters:
+  - file: machine_learning/computer-vision-video-game-ai
+- part: Jupyter-book examples
+  chapters:
+  - file: markdown
+  - file: notebooks
+  - file: markdown-notebooks
