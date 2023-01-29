@@ -1,9 +1,21 @@
-# Welcome to my website
-Hello, my name is Logan Kells. I'm a software engineer and a MSCS student at the University of Texas at Austin.
+# Welcome
+Hello and welcome to my website! Here you will find articles for some of my projects, 
+tutorials, my resume, and my contact information.
 
-Contact me through my LinkedIn page: [https://www.linkedin.com/in/logankells/](https://www.linkedin.com/in/logankells/)
+## About me
+My name is Logan Kells and I'm a Software Engineer and an M.S. Computer Science Candidate at the University of Texas at Austin.
 
-Check out the content pages bundled with this sample book to see more.
+## Contact me
+Please feel free to contact me on LinkedIn or by Email.
+- Through my LinkedIn page: [https://www.linkedin.com/in/logankells/](https://www.linkedin.com/in/logankells/)
+- By email: [LKells@outlook.com](mailto:lkells@outlook.com)
+
+## Visit my other sites
+- My GitHub page: [https://github.com/LoganKells](https://github.com/LoganKells)
+- My LinkedIn page: [https://www.linkedin.com/in/logankells/](https://www.linkedin.com/in/logankells/)
+
+## Table of contents
+Check out the content pages below to see what I've been working on.
 
 ```{tableofcontents}
 ```
