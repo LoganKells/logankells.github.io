@@ -3,7 +3,7 @@ This repo contains the source code for my webpage: https://logankells.github.io
 
 # 1. Install
 
-`pip install -r requirements.txt`
+`pip install -r docs/requirements.txt`
 
 # 2. Build
 Run the following commands from the root of the `origin/main` branch.
