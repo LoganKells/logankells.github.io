@@ -5,13 +5,11 @@ format: jb-book
 root: intro
 parts:
 - part: Machine Learning
-  caption: Machine Learning
   chapters:
   - file: machine_learning/machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
 - part: Jupyter-book examples
-  caption: Jupyter-book examples
   chapters:
   - file: markdown
     sections:
