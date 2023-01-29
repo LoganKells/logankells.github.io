@@ -6,12 +6,12 @@ root: intro
 parts:
 - caption: Machine Learning
   chapters:
-  - file: machine_learning/machine-learning
+  - file: machine_learning/projects-machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
 - caption: Jupyter-book examples
   chapters:
-  - file: markdown
+  - file: jupyter_book_examples/markdown
     sections:
-    - file: notebooks
-    - file: markdown-notebooks
+    - file: jupyter_book_examples/notebooks
+    - file: jupyter_book_examples/markdown-notebooks
