@@ -40,26 +40,25 @@ After custom controller tuning, we were able to run each agent against an AI tea
 
 ## Appendix
 
-!["Figure 1"](https://sn3301files.storage.live.com/y4myG3Eh7SFzCIrShp1VMk3EMoUlmrlm_vjhYixKgcnFH9FJhjo1suJm8EHUIPAvz-QtirJadnJKzVbCkYXs3qbQLSPAtcrc_24v0p6kLr2BGhMdPH7E6uIGWwlte48wfdr8BSSYGM7Z0vn4xXa-WgB4NpvyRdkncf5N2Y2I50lnT2CQonx2ME-sPthYoSBomPJ?width=544&height=299&cropmode=none "Figure 1")
+!["Figure 1"](../images/computer-vision-video-game-ai/figure1.png "Figure 1")
 
 **Figure 1**. Training loss (red) and validation loss (blue) for our Object detection model for detecting the puck in normalized screen space (x, y) coordinate.
 
-
-!["Figure 2"](https://sn3301files.storage.live.com/y4mFE7BirxfW9IghTXZQSDEAoT18cowW7YnZPpCSueZIpmBFQY6oYJmd5r5GCRHf8CS0C1TsSRZu7a7UUareB3Bsn1T9BRc1rcWE18VguVp4eGEGB9fjHDkovV6ymF_qn7DWy2VwJSpTgv-fJ7SK0rOLcEpL_G_dDpFkFR2cqJ6OaLO-JBm-GBMAlvtxnOp3BxT?width=456&height=295&cropmode=none "Figure 2")
+!["Figure 2"](../images/computer-vision-video-game-ai/figure2.png "Figure 2")
 
 **Figure 2**. Binary Classification Model determines probability of puck on screen. The images are filtered through the Binary Classification Model, and if a threshold is reached then the image is sent to the Puck Object Detection Model.
 
 
-!["Figure 3"](https://sn3301files.storage.live.com/y4mu-AY3UyDK7ZrheTxQ0JMV66fQnytmSKj40ruAj-8FXa84vXo8s-RSRKLf-F3v4Uyy8YK0A06DkeVnbtkVqs8A-N49L80eJeQ-ydw6Fe8664TchjQ_jDp4Bfj8wkd5oA1wZwVAFAprZvlOg9Cyy_8-riymS6lf0R3-Hs53ku-bYJ4G5Or8vfHGCDtgVBUK3vG?width=519&height=285&cropmode=none "Figure 3")
+!["Figure 3"](../images/computer-vision-video-game-ai/figure3.png "Figure 3")
 
 **Figure 3**. Training loss (blue) and validation loss (red) for our Binary Classifier #3 model for detecting if the puck is on screen.
 
 
-!["Figure 4"](https://sn3301files.storage.live.com/y4m4cZ0CsaECVXLIMkiJfZxgPKraYkiuxdhlwApI1Eh1_4I2LWZC4oUeb6gIDoHRTyP-YR6AAd3GM6PJmQjNvNFfM1x6ocwhagEVsNLICtKUdiWDCCuPKJ68gpBqe_u8KsDtHNXoeekjZ8itseJLzwE1zizkY7RLxrJapCrj2IZwSu-KNtcqBPlMn4OF1I7AUtv?width=539&height=304&cropmode=none "Figure 4")
+!["Figure 4"](../images/computer-vision-video-game-ai/figure4.png "Figure 4")
 
 **Figure 4**. Training loss (blue) and validation loss (orange) for our Binary Classifier #4 model for detecting if the puck is on screen with reduced layer classes and 10% image resolution reduction.
 
 
-!["Table 1"](https://sn3301files.storage.live.com/y4mBr4-7baQDZB5CqW0XlxdvGmGMI8EeZpEwYzPbS7nYvpNtjhArjRQcLrbh7X2_4jHeATU5yyXRxgpKvNB0JiY1T6Riy3Sv8GZFv1bxJqb36Y0Dj6Lz4JjyHPzKNJ1iZDfcmVR0LGtrE248L5whwrPl04ZxB8HQxYDPwUZBfRBe9Oa2da8ZwIsXFcmmLYur-1I?width=660&height=228&cropmode=none "Table 1")
+!["Table 1"](../images/computer-vision-video-game-ai/table1.png "Table 1")
 
 **Table 1**. 10-Game tournament between player agents with average score of our team versus AI recorded.
