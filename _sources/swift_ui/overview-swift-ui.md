@@ -1,5 +1,6 @@
 # iOS App Development with SwiftUI
 
-## My Projects
+Below are some of my iOS app projects implemented with SwiftUI.
 
-{doc}`../swift_ui/recipe-list.md`
+## My Projects
+- [Recipe List app](../swift_ui/recipe-list.md)
