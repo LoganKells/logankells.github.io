@@ -9,11 +9,21 @@ parts:
   - file: machine_learning/overview-machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
+- caption: Android Development
+  chapters:
+  - file: android_development/overview-android-development
+    sections:
+    - file: android_development/city-explorer-app
 - caption: iOS App Development
   chapters:
   - file: swift_ui/overview-swift-ui
     sections:
     - file: swift_ui/recipe-list
+- caption: Course Reviews
+  chapters:
+  - file: course_reviews/overview-course-reviews
+    sections:
+    - file: course_reviews/review-android-programming
 - caption: Jupyter-book examples
   chapters:
   - file: jupyter_book_examples/markdown

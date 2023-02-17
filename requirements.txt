@@ -39,8 +39,8 @@ jedi==0.18.2
 Jinja2==3.1.2
 jsonpointer==2.3
 jsonschema==3.2.0
-jupyter==1.0.0
-jupyter-book==0.13.1
+jupyter
+jupyter-book
 jupyter-cache==0.4.3
 jupyter-console==6.4.4
 jupyter-events==0.6.3
