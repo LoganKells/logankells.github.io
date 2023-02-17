@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Computer Vision Video Game AI &#8212; Logan Kells M.S. CS Candidate &amp; Software Engineer</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Android Development" href="../android_development/overview-android-development.html" />
+    <link rel="prev" title="Machine Learning Projects" href="overview-machine-learning.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Logan Kells M.S. CS Candidate & Software Engineer</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Machine Learning
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="overview-machine-learning.html">
+   Machine Learning Projects
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Computer Vision Video Game AI
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Android Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../android_development/overview-android-development.html">
+   Android Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../android_development/city-explorer-app.html">
+     City Explorer Android App
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  iOS App Development
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../swift_ui/overview-swift-ui.html">
+   iOS App Development with SwiftUI
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../swift_ui/recipe-list.html">
+     Recipe List
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Course Reviews
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../course_reviews/overview-course-reviews.html">
+   Course Reviews
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course_reviews/review-android-programming.html">
+     Android Programming (CS 386P) Review
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Jupyter-book examples
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../jupyter_book_examples/markdown.html">
+   Markdown Files
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter_book_examples/notebooks.html">
+     Content with notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter_book_examples/markdown-notebooks.html">
+     Notebooks with MyST Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/LoganKells/logankells.github.io"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Fmachine_learning/computer-vision-video-game-ai.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/machine_learning/computer-vision-video-game-ai.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo">
+   Demo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-collection">
+   Data Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-models">
+   Deep Learning Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-detection-with-supervised-learning">
+     Object detection with supervised learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binary-classification-with-supervised-learning">
+     Binary classification with supervised learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reinforcement-learning">
+     Reinforcement Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controller">
+   Controller
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix">
+   Appendix
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Computer Vision Video Game AI</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo">
+   Demo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup">
+   Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-collection">
+   Data Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-models">
+   Deep Learning Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#object-detection-with-supervised-learning">
+     Object detection with supervised learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binary-classification-with-supervised-learning">
+     Binary classification with supervised learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reinforcement-learning">
+     Reinforcement Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#controller">
+   Controller
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix">
+   Appendix
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="computer-vision-video-game-ai">
+<h1>Computer Vision Video Game AI<a class="headerlink" href="#computer-vision-video-game-ai" title="Permalink to this headline">#</a></h1>
+<p>This is a summary of Deep Learning computer vision game AI for playing a 2 versus 2 hockey game.
+Authors: Logan Kells, Buvaneshwaran T, Amir Ebrahimi, Pranav Kayastha</p>
+<section id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h2>
+<p>The objective is to score goals against AI in a hockey style of video game. Our controller uses exclusively screen space images to perform object and goal detection plus a bespoke controller logic to control the player steering.</p>
+<p><img alt="&quot;Demo&quot;" src="https://media.giphy.com/media/8CoBb5XgGoQG9nFnu0/giphy.gif" /></p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h2>
+<p>From the outset of the project, it was necessary for us to organize the project so that we all could work separately on different models and controllers concurrently. Utility functions for training and data classes for hyper-parameters were added to allow us to experiment with new models and hyper-parameters across a consistent skeleton. We also added an optional argument in the Tournament class that allowed us to watch the game live and select the agent to view in the game. This helped us tune our controllers beyond measuring the training and validation loss and accuracy of puck detection and the puck binary logit.</p>
+</section>
+<section id="data-collection">
+<h2>Data Collection<a class="headerlink" href="#data-collection" title="Permalink to this headline">#</a></h2>
+<p>In order to collect data to train our models, we modified the play method in the Tournament class so that it called a custom helper function save_image_and_puck_frames for all players at each frame. The function took player and frame data as inputs and saved the image and training labels for puck position in x, y and puck on screen in binary 1, 0 for training. Inside the save_image_and_puck_frames function, we utilized the helper function _to_image from homework five and passed in the puck coordinates, transposed camera projection, and transposed camera view by using world state from the pystk library. With this method, we were able to get the puck location for each image and convert it to normalized (x, y) coordinates. We also divided the images into separate datasets; some with pucks and some without pucks. For training the puck (x, y) coordinate detection model only puck images were fed into the model. For training the binary classifier model a mixed dataset of images with and without pucks was used.</p>
+</section>
+<section id="deep-learning-models">
+<h2>Deep Learning Models<a class="headerlink" href="#deep-learning-models" title="Permalink to this headline">#</a></h2>
+<section id="object-detection-with-supervised-learning">
+<h3>Object detection with supervised learning<a class="headerlink" href="#object-detection-with-supervised-learning" title="Permalink to this headline">#</a></h3>
+<p>We used several models, including our models from homework, master solutions, and a model implementing the U-Net architecture to predict the location of the puck in the image screen space.  After experimenting with different models, data augmentations and hyper parameters, we were able to get mean absolute loss down to 0.0134 on a training set of 5,000 images with training time of 16 minutes.</p>
+<p>When we used our models to compete against the AI, we realized that the model activated on the wall and ice features. We compared our model’s prediction to the ground truth location from the pystk library during tournament play and found the mean error to be in the range of 0.15 to 0.2. As a next step, we decreased the layer count from 4 to 3 layers, decreased layer channels to [8, 16, 32], and increased our dataset to 28,000 images generated from different games and player-agents. This model performed significantly better during tournament play against the AI, with validation loss of 0.015 (Figure 1).</p>
+<p>Unfortunately, we found that the model did poorly on images where the puck was not on screen. To resolve this issue, we decided to run the image through two models - one to predict whether the puck exists in the image as a binary logit, and one to predict the location of the puck coordinate, (x, y).</p>
+</section>
+<section id="binary-classification-with-supervised-learning">
+<h3>Binary classification with supervised learning<a class="headerlink" href="#binary-classification-with-supervised-learning" title="Permalink to this headline">#</a></h3>
+<p>We used a binary classifier to predict the probability of the puck being on screen. If the classifier is a high enough probability of the puck being on screen, then the object detection model is specialized to only predict the location of the puck on screen. By using two models together it allowed us to handle the agent controller logic in both situations where a puck is either present or not present with binary logits at 0.65-0.9 (Figure 2).</p>
+<p>The Binary Classification Model is a block-based network with each block containing the following sequence: Convolution2D, ReLU, MaxPool2D, and ReLU. These sequences were repeated for 4 layers. The classification contains a Linear operator followed by a Sigmoid to achieve the logit. A single classification is output in the model.forward method representing the probability of the puck being on screen.</p>
+<p>With a dataset of 35,000 images, we were able to get the validation loss (BCEWithLogits) down to 0.26 (Figure 3). We reduced the model parameter size by shrinking the layers and shrinking the input image geometry by 10%, which resulted in a 50% reduction in the binary classifier frame time. The training is comparable between Figure 3 and Figure 4 for the model with reduced layer classes and 10% resolution reduction. The generalized performance of this model was evaluated by running it in tournament.play and printing the probability for each image. We found that the probability was &gt;0.90 when the puck was on screen. However, the model struggled with inconsistent probabilities ranging from [0.10 to 0.88] when there was truly no puck on screen. We resolved this issue by taking the mean binary logit over 5-10 images, depending on the specific agent’s tuning, which stabilized the binary logit for long enough frame time for the agent to steer to the puck (x, y).</p>
+</section>
+<section id="reinforcement-learning">
+<h3>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Permalink to this headline">#</a></h3>
+<p>We also experimented with reinforcement learning on this project by building an imitation learning model that would try to imitate the AI agent. We built on top of the lecture notes and extended the classifier to predict all six actions from the image. Unfortunately, we were not able to get good results and decided to focus on supervised learning models with explicit commands for player.act with custom controller logic.</p>
+</section>
+</section>
+<section id="controller">
+<h2>Controller<a class="headerlink" href="#controller" title="Permalink to this headline">#</a></h2>
+<p>Before embedding our model into our agent, we started to create our agents based on the ground truth position of the puck using the world state from the pystk library. We started with a base agent that was able to score a goal when playing without an opponent. The base agent would accelerate linearly up to the maximum velocity, steer towards the puck, and steer in the direction of the nearest goal post. After achieving this milestone, each of us continued to build out our own separate agents.</p>
+<p>To improve controller performance, we also adjusted the maximum velocity depending on the position of the player in the map. We tuned the steering parameters depending on the velocity and screen location of the puck and the goal. We were able to beat the AI after adjusting the controller logic with the puck binary logit, and puck (x, y) coordinate data, velocity logic, and map positioning logic. Next, we implemented an agent that would sprint to the puck to be first in order to bounce the puck away from the AI. The less aggressive agent would then direct a goal by targeting the puck after the first exchange between the aggressive agent and the AI.</p>
+<p>After custom controller tuning, we were able to run each agent against an AI team in 10-game tournaments to decide the best agent for the final project. Based on the average score over the ten games we chose our final submission to be a combination of agent_amir with agent_logan_pk_edits (Table 1). The combination selected agent_amir for the red team and agent_logan_pk_edits for the blue team to capitalize on each model working better for the respective team with our testing. This combination resulted in similar performance to the agent_amir however we hypothesize its performance would generalize better over many tournaments and with the online grader. This combined agent is our final submission for the tournament with the best scoring performance and high frame time efficiency.</p>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">#</a></h2>
+<p><img alt="&quot;Figure 1&quot;" src="../_images/figure1.png" /></p>
+<p><strong>Figure 1</strong>. Training loss (red) and validation loss (blue) for our Object detection model for detecting the puck in normalized screen space (x, y) coordinate.</p>
+<p><img alt="&quot;Figure 2&quot;" src="../_images/figure2.png" /></p>
+<p><strong>Figure 2</strong>. Binary Classification Model determines probability of puck on screen. The images are filtered through the Binary Classification Model, and if a threshold is reached then the image is sent to the Puck Object Detection Model.</p>
+<p><img alt="&quot;Figure 3&quot;" src="../_images/figure3.png" /></p>
+<p><strong>Figure 3</strong>. Training loss (blue) and validation loss (red) for our Binary Classifier #3 model for detecting if the puck is on screen.</p>
+<p><img alt="&quot;Figure 4&quot;" src="../_images/figure4.png" /></p>
+<p><strong>Figure 4</strong>. Training loss (blue) and validation loss (orange) for our Binary Classifier #4 model for detecting if the puck is on screen with reduced layer classes and 10% image resolution reduction.</p>
+<p><img alt="&quot;Table 1&quot;" src="../_images/table1.png" /></p>
+<p><strong>Table 1</strong>. 10-Game tournament between player agents with average score of our team versus AI recorded.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./machine_learning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="overview-machine-learning.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Machine Learning Projects</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../android_development/overview-android-development.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Android Development</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Logan Kells<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
