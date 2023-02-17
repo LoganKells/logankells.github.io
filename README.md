@@ -12,4 +12,4 @@ Run the following commands from the root of the `origin/main` branch.
 # 4. Deploy
 After building the project, deploy to the `gh-pages` branch. This branch should be configured in the 
 Github Pages settings.
-- `ghp-import -n -p -f docs/_build-html`
+- `ghp-import -n -p -f docs/_build/html`
