@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="iOS Apps I’ve Created" href="../swift_ui/overview-swift-ui.html" />
+    <link rel="next" title="&lt;no title&gt;" href="reddit-app.html" />
     <link rel="prev" title="Android Apps I’ve Created" href="overview-android-development.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -204,35 +204,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../course_reviews/review-android-programming.html">
      Android Programming (CS 386P) Review
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Jupyter-book examples
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../jupyter_book_examples/markdown.html">
-   Markdown Files
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../jupyter_book_examples/notebooks.html">
-     Content with notebooks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../jupyter_book_examples/markdown-notebooks.html">
-     Notebooks with MyST Markdown
     </a>
    </li>
   </ul>
@@ -392,12 +363,66 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo">
+   Demo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-setup">
+   Project Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#services-and-libraries">
+   Services and Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ui-and-ux">
+   UI and UX
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture">
+   Architecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-development">
+   Project Development
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -409,6 +434,49 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demo">
+   Demo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-setup">
+   Project Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#services-and-libraries">
+   Services and Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ui-and-ux">
+   UI and UX
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#architecture">
+   Architecture
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-development">
+   Project Development
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -418,7 +486,253 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="city-explorer-android-app">
 <h1>City Explorer Android App<a class="headerlink" href="#city-explorer-android-app" title="Permalink to this headline">#</a></h1>
-<p>TBD</p>
+<p>The City Explorer Android application is a planning system for travelers.
+At its core, the application enables users to optimize their planned
+travel destinations to get the most out of the time available to them.
+The user manages a list of saved travel locations that are displayed
+in a list on the home fragment. A floating action play button is on
+screen, which optimizes the travel route based on the user’s inputs
+for each location and their total available time for travel,
+(Figure 1, Figure 3).</p>
+<section id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">#</a></h2>
+<p>Demo Video: <a class="reference external" href="https://youtu.be/Nrf5-DkQiTc">https://youtu.be/Nrf5-DkQiTc</a></p>
+</section>
+<section id="project-setup">
+<h2>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">#</a></h2>
+<p>The project build files, such as the project and application gradle files and the manifest file manage the project in
+Android Studio. We followed the “Set up an Android Studio project” for the standard project setup, [10]. We also
+utilized the “Maps SDK for Android Quickstart” for configuring the project to work with the Maps SDK, [11].</p>
+<p>The main unique requirement for developing the City Explorer application, beyond typical Android Studio installation
+steps, is the configuration of the Google services API key and SHA1 certificate pair whenever a new developer is added
+to the project. This is required for security purposes, and should not affect users if the build machine has been added.
+Please follow the detailed instructions on restricting API keys using the developer admin/billing account, [9]. If the
+SHA1 is not added in the Google Cloud console for a new developer machine, then the Maps activity will display a blank
+area in the layout rather than loading data and displaying the map.</p>
+</section>
+<section id="services-and-libraries">
+<h2>Services and Libraries<a class="headerlink" href="#services-and-libraries" title="Permalink to this headline">#</a></h2>
+<p>City explorer uses several external services to retrieve data for the optimization and for user features.
+Services:</p>
+<ul class="simple">
+<li><p>Maps SDK for Android, [1]</p>
+<ul>
+<li><p>Geocoding API, [2]</p></li>
+</ul>
+</li>
+<li><p>Third party libraries:</p>
+<ul>
+<li><p>Gson Library, [3]</p></li>
+<li><p>Retrofit2 Library, [4]</p></li>
+</ul>
+</li>
+<li><p>Android features highlighted:</p>
+<ul>
+<li><p>Navigation UI, [12]</p></li>
+<li><p>ViewModel, [13]</p></li>
+</ul>
+</li>
+</ul>
+<p>The most important external services for City Explorer are the Google Maps SDK for Android and the Geocoding API. Both
+of these services are freely available for our application due to the lower user count for a student project. These
+services are configured and managed within the Google Cloud console, where we administer security and limit how the
+service APIs can be used to prevent unwanted access or usage using an API Key with developer machine SHA1 stored in the
+console.</p>
+<p>We used two third party libraries within the application to develop some features. The Retrofit2 library was used
+because this library’s Retrofit.Builder enables creation of our LocationJsonApi for interacting with a public Geocoding
+API, [14] Ultimately we decided to utilize the Maps SDK Geocoder, however we retained the Retrofit.Builder as a
+secondary backup in case we needed to migrate to another service while developing the applications. The Gson library is
+used extensively to persist user saved location data to the application storage. This library has convenience functions
+like toJson, which is able to convert Java classes, in our case List<Location>, to a JSON formatted string;
+serialization. Most of the heavy lifting happens with the Gson JsonDeserializer to convert JSON to a String for our
+application (serialization with Gson.toJson) and to convert a JSON String to a Location class instance (deserialization
+with Gson.fromJson).</p>
+<p>The Android operating system has many features that developers can use when building their application features. A few
+we wanted to highlight include Navigation UI and ViewModel. We utilized Navigation UI, which reduces the code complexity
+in our application when navigating between fragments. This built-in Android feature utilizes a navigation graph, which
+is constructed by the developer using a simple XML file. Actions define the routes a user can take between fragments,
+and the developer simply calls a navigation graph action whenever a fragment change is needed. This led to our
+architecture focusing on a single MainActivity with fragments serving our UI needs. We paired the Navigation UI with the
+Android ViewModel as MVVM architecture. The ViewModel gives huge advantages by standardizing the UI updates using a
+single source of truth. In our case, we discuss some added complexities given we decided to persist saved locations in a
+JSON file to support an import and export from and to JSON in the Project Development section of our writeup. We
+extended additional functionality to synchronize data in the JSON file with the ViewModel using functions written in our
+application-level ViewModel class. As we discuss further in Project Development, we ran into a learning curve regarding
+how to launch various activities related to the Storage Access Framework given our MVVM architecture. Our solutions
+involved launching activities within our fragments and passing URIs to the ViewModel for reading and writing from and to
+files.</p>
+<p>Ultimately we had a positive experience using several services, third party libraries, and Android features to develop
+features for the City Explorer travelers. We were aided greatly by the well maintained and detailed documentation
+provided by the library and Android authors. Also our experiences developing various features and applications during
+our coursework prepared us to define architecture and select various elements to develop our features. We could not have
+been successful without these extensive resources.</p>
+</section>
+<section id="ui-and-ux">
+<h2>UI and UX<a class="headerlink" href="#ui-and-ux" title="Permalink to this headline">#</a></h2>
+<p>When the user clicks the + floating action button on the home fragment, they are taken to the new location fragment,
+where they enter data for new locations. If the location is marked as the starting location for the travel, this will
+always be optimized as the first travel destination, (Figure 2).</p>
+<p>When the user clicks the play floating action button on the home fragment, this calculates the optimized route given the
+user’s saved locations. The list of saved locations is resorted based on the optimization. The first location on the
+list is the user’s starting location after optimization. The user is required to have entered the “Time Available For
+Travel” value, which is required to optimize the travel route; otherwise a Toast message will be displayed, (Figure 3).</p>
+<p><img alt="&quot;Figure 1&quot;" src="../_images/figure11.png" /></p>
+<p><strong>Figure 1</strong>, The home fragment is visible when the app starts.
+The saved locations are available along with several
+controls.</p>
+<p><img alt="&quot;Figure 2&quot;" src="../_images/figure21.png" /></p>
+<p><strong>Figure 2</strong>, The user has clicked the plus button and is able to create new locations.</p>
+<p><img alt="&quot;Figure 3&quot;" src="../_images/figure31.png" /></p>
+<p><strong>Figure 3</strong>, The user has 1,000 minutes available for their San Francisco travel.
+After clicking the play button, the travel is optimized.</p>
+<p>When the user clicks on a saved location, the Maps activity will start with the zoom centered on the address and a
+marker displayed on the map. If this is the first usage of the map after the City Explorer app is installed, the user is
+prompted for device location permissions, (Figure 4). The location nickname is displayed in the action bar and as a
+marker tag at the position of the saved location, (Figure 5). Additionally, the map navigation buttons and the “my
+location” buttons are available when using the map to aid in map usage, (Figure 5).</p>
+<p>In addition, the user’s data is persisted in a JSON file in the app storage. When the “Import From JSON” button is
+clicked, the Storage Access Framework is used to allow the user to select the file. Similarly, when the “Export To JSON”
+button is clicked, the same framework enables the user to save a new JSON file wherever they decide, (Figure 6).</p>
+<p><img alt="&quot;Figure 4&quot;" src="../_images/figure41.png" /></p>
+<p><strong>Figure 4</strong>, The user is prompted for device location permissions.</p>
+<p><img alt="&quot;Figure 5&quot;" src="../_images/figure5.png" /></p>
+<p><strong>Figure 5</strong>, The “Hotel” saved location is displayed centered on the map with a marker.</p>
+<p><img alt="&quot;Figure 6&quot;" src="../_images/figure6.png" /></p>
+<p><strong>Figure 6</strong>, The data is persisted in a JSON file which the user can export or import.</p>
+<p><img alt="&quot;Figure 7&quot;" src="../_images/figure7.png" /></p>
+<p><strong>Figure 7</strong>, The user has clicked the “Export To JSON” button in the home fragment.
+The Storage Access Framework defaults to saving to their device Downloads folder
+with the filename pre-populated as “city_explorer_locations.json”</p>
+<p><img alt="&quot;Figure 8&quot;" src="../_images/figure8.png" /></p>
+<p><strong>Figure 8</strong>, The user has clicked the “Save to JSON” button in the home fragment.
+The Storage Access Framework remembers recent locations and the user can select
+JSON files from device user or cloud storage locations.</p>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
+<p>The application consists of three fragments (main fragment, locations fragment and maps fragment), which navigate
+between each other. The functionality is described below.</p>
+<p>The MainFragment.kt, which consists of these elements, (Figure 1).</p>
+<ol class="simple">
+<li><p>A list of locations where the name, full address (address, city, state, zip code, etc) and user-assigned rating is
+displayed.</p></li>
+<li><p>Import locations from a JSON file. This will take the user to the phone system to select a directory and find the
+JSON file to import it.</p></li>
+<li><p>Export locations to a JSON file. This will take the user to the phone system to select a name for the JSON file and a
+directory to export and save it.</p></li>
+<li><p>Delete one or multiple locations. However, a location which has been added as “starting location” cannot be deleted.</p></li>
+<li><p>Click on a location to view it on the map. This will take the user to the map fragment.</p></li>
+<li><p>Add new locations. This will take the user to the location fragment.</p></li>
+<li><p>Create an optimized route, after adding the total available time, which will create a ranked list of locations for
+the user to visit, starting from the starting location.</p></li>
+</ol>
+<p>The LocationFragment.kt, which consists of these elements, (Figure 2).</p>
+<ol class="simple">
+<li><p>Various fields (nickname, address, city, zip code, country, state, length of stay, comments) related to the location.</p></li>
+<li><p>A starting location checkbox which indicates if this is a starting location (checked) or a location to visit (
+unchecked).</p></li>
+<li><p>A save location button, which saves the location based on the information the user has inserted, as well as the
+checkbox option.</p></li>
+<li><p>A return to main menu button which returns to the main fragment and the main menu.</p></li>
+</ol>
+<p>The MapsActivity.kt, which consists of these elements, (Figure 5).</p>
+<ol class="simple">
+<li><p>The map, which includes a pin to the selected location.</p></li>
+<li><p>The system back button, which takes the user back to the main fragment and the main menu.</p></li>
+</ol>
+<p>Apart from the aforementioned fragments, the functionality of their elements and the navigation between them as it was
+described above, the application’s architecture also incorporates data persistence through saving and retrieving the
+data from a JSON file. During each action of adding or deleting locations from the list, the recycler view list is
+updated in a real-time manner, along with the viewmodel, and the JSON is synced as well.</p>
+<p>It is worth noting that we restrict the list to having one starting location. The user may add zero, one or many
+starting locations though. In case of zero starting locations, then the route optimization algorithm naturally considers
+the first added location to be the starting locations. In case of many starting locations, then the last starting
+location added by the user is considered to be the starting location and the rest of locations are considered points of
+interest for the user to visit.</p>
+<p>Then, for the deletion functionality specifically, we allow for deleting one or multiple locations at once. However, we
+prevent the starting location from being deleted. If multiple locations are selected for deletion and the starting
+location is included in them, then all of these locations are deleted but the starting location remains in the list.</p>
+<p>Furthermore, special consideration was added to turning user input into a nicely displayed valid address by making use
+of geocoding and string manipulation on the backend as well as various visual enhancements such as dark themed screen
+and carefully designed xml row boxes for the front end.</p>
+<p>Finally, the route optimization algorithm utilizes a weighted greedy algorithm and uses a good approximation method for
+distance through the use of the WGS84 ellipsoid metric in order to avoid the billing of the Google Maps Directions API.
+The metric used to rank the locations combines both distance and user ranking which adds to the complexity of the
+algorithm, but also to its usefulness, as we want to recommend places that combine a good rating with a reasonable
+travel distance.</p>
+</section>
+<section id="project-development">
+<h2>Project Development<a class="headerlink" href="#project-development" title="Permalink to this headline">#</a></h2>
+<p>An interesting aspect of development was the navigation between different fragments (main fragment, location fragment,
+maps fragment) where the user could perform various actions. These actions had to be registered to both the viewmodel
+and the recyclerview, as they both had to be updated in real-time, and to the JSON file as well! Synchronizing all of
+the above in a well-defined pipeline and in a real-time manner was certainly a challenge but also a very rewarding
+learning experience.</p>
+<p>Another hurdle was managing and validating edge cases of user input when it came to adding locations. We took into
+account blank fields, invalid input and many more factors in order to ensure a proper transition from user input to
+geocoding and proper display in the list. Furthermore, the user could add zero, one or many starting locations. In the
+case of several starting locations, we decided to overwrite existing starting locations and only keep the starting
+location added last. Finally, while we allow the user to delete several locations at once, we forbid them from deleting
+the starting location at any time (unless it is overwritten).</p>
+<p>Persisting the user data is important whenever the City Explorer application is fully closed and the main memory is
+cleared by the operating system. Given the unstructured nature of the saved locations, we decided to utilize JSON format
+to persist the user’s saved location on app data storage. This introduced layers of new challenges for our development
+as we discovered the criticality of synchronizing the data in the view model and the data in the JSON file,
+understanding intricacies of MVVM framework, avoiding blocking the main process, retrieving app context outside of an
+activity, handling launching various activities, among other things. Whenever data was out of sync, the user’s export to
+JSON would not match the values represented in the UI. As we worked on persistence and synchronization with the model we
+discovered that any data changes made by the user, specifically selecting locations for deletion and marking locations
+as the starting point would also become desynced. We opted to use a private function saveLocationsToJson to sync data to
+the JSON with a non-blocking coroutine in the view model. A subsequent development issue arose when trying to access the
+app storage to write to the JSON file using the saveLocationsToJson function in the view model - we did not have the
+application context as you would within the MainActivity. Through more research we discovered we could elevate the view
+model to the application level by inheriting the AndroidViewModel, which enables calling the
+getApplication<Application>() function to derive the context when accessing the app storage.</p>
+<p>We wanted to enable importing and exporting of the user’s saved locations as a useful feature. This required some
+research to utilize an available Android framework that is familiar for our user’s, manages permissions, and also simple
+to implement within our application. We identified the Storage Access Framework (SAF) as the best solution, which
+allowed us to launch the SAF document provider activities ACTION_CREATE_DOCUMENT and ACTION_OPEN_DOCUMENT, [5, 6, 7].
+The main challenge for us was understanding how to instantiate the ActivityResultLauncher for each activity in the
+HomeFragment while also utilizing the view model to write to the user selected file. The solution was using the URI to
+the file provided within the document provider activity’s ActivityResult instance and passing this URI to the model to
+read or write byte arrays of JSON formatted view model data. This solution is described well in the “Perform operations
+on chosen location” in the Android developers training for “Documents and other files”, [8].</p>
+<p>Moreover, the route optimization was an interesting aspect of development as we had to combine the distance and the
+user’s preference to produce a ranked list. In the end, we found a good balance by using a weighted greedy algorithm
+which takes into consideration both distance and rating to rank locations and this way, we produce the desired ranked
+list.</p>
+<p>Another challenging aspect was the fact that we only utilized the Maps SDK, which allowed geocoding, but not the Google
+Maps Directions API (a premium service that requires billing) which would provide a natural solution to estimating the
+distance between two locations and the time required for travel. Thus, our solution was to calculate the distance
+between two locations as the distance defined by the formed WGS84 ellipsoid, approximately the straight line measurement
+between them. This turned out to be a good approximation for the purpose of our application, therefore making it a good
+free alternative to the Google Maps Directions API for the calculation of distance between two locations. However, for
+the travel time, we had to resort to an assumption of a constant 30 mph traveling speed, which may or may not be
+accurate depending on the user’s location and route. We hope that, in the future, we can find a better approximation to
+calculate travel time, or pay to use Google Maps Directions API which would provide an accurate travel time for each
+case.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Maps SDK for Android <a class="reference external" href="https://developers.google.com/maps/documentation/android-sdk/overview">https://developers.google.com/maps/documentation/android-sdk/overview</a></p></li>
+<li><p>Geocoding API <a class="reference external" href="https://developers.google.com/maps/documentation/geocoding/start">https://developers.google.com/maps/documentation/geocoding/start</a></p></li>
+<li><p>Gson Library <a class="reference external" href="https://github.com/google/gson">https://github.com/google/gson</a></p></li>
+<li><p>Retrofit2 Library <a class="reference external" href="https://github.com/square/retrofit">https://github.com/square/retrofit</a></p></li>
+<li><p>Storage Access Framework <a class="reference external" href="https://developer.android.com/guide/topics/providers/document-provider">https://developer.android.com/guide/topics/providers/document-provider</a></p></li>
+<li><p>ACTION_OPEN_DOCUMENT activity <a class="reference external" href="https://developer.android.com/reference/android/content/Intent#ACTION_OPEN_DOCUMENT">https://developer.android.com/reference/android/content/Intent#ACTION_OPEN_DOCUMENT</a></p></li>
+<li><p>ACTION_CREATE_DOCUMENT activity <a class="reference external" href="https://developer.android.com/reference/android/content/Intent#ACTION_CREATE_DOCUMENT">https://developer.android.com/reference/android/content/Intent#ACTION_CREATE_DOCUMENT</a></p></li>
+<li><p>Training to “Perform operations on chosen
+location” <a class="reference external" href="https://developer.android.com/training/data-storage/shared/documents-files#perform-operations">https://developer.android.com/training/data-storage/shared/documents-files#perform-operations</a></p></li>
+<li><p>Restricting API keys in Google
+Cloud <a class="reference external" href="https://developers.google.com/maps/documentation/android-sdk/get-api-key#restrict_key">https://developers.google.com/maps/documentation/android-sdk/get-api-key#restrict_key</a></p></li>
+<li><p>Maps SDK for Android Quickstart <a class="reference external" href="https://developers.google.com/maps/documentation/android-sdk/start">https://developers.google.com/maps/documentation/android-sdk/start</a></p></li>
+<li><p>Set up an Android Studio project <a class="reference external" href="https://developers.google.com/maps/documentation/android-sdk/config">https://developers.google.com/maps/documentation/android-sdk/config</a></p></li>
+<li><p>Navigation UI in Android <a class="reference external" href="https://developer.android.com/guide/navigation/navigation-ui">https://developer.android.com/guide/navigation/navigation-ui</a></p></li>
+<li><p>ViewModel in Android <a class="reference external" href="https://developer.android.com/topic/libraries/architecture/viewmodel">https://developer.android.com/topic/libraries/architecture/viewmodel</a></p></li>
+<li><p><a class="reference external" href="http://Geocode.maps.co">Geocode.maps.co</a> <a class="reference external" href="https://geocode.maps.co/">https://geocode.maps.co/</a>)</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -455,10 +769,10 @@ title="Print to PDF"
             <p class="prev-next-title">Android Apps I’ve Created</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../swift_ui/overview-swift-ui.html" title="next page">
+    <a class='right-next' id="next-link" href="reddit-app.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">iOS Apps I’ve Created</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
