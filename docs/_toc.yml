@@ -14,6 +14,7 @@ parts:
   - file: android_development/overview-android-development
     sections:
     - file: android_development/city-explorer-app
+    - file: android_development/reddit-app
 - caption: iOS App Development
   chapters:
   - file: swift_ui/overview-swift-ui
@@ -24,9 +25,9 @@ parts:
   - file: course_reviews/overview-course-reviews
     sections:
     - file: course_reviews/review-android-programming
-- caption: Jupyter-book examples
-  chapters:
-  - file: jupyter_book_examples/markdown
-    sections:
-    - file: jupyter_book_examples/notebooks
-    - file: jupyter_book_examples/markdown-notebooks
+#- caption: Jupyter-book examples
+#  chapters:
+#  - file: jupyter_book_examples/markdown
+#    sections:
+#    - file: jupyter_book_examples/notebooks
+#    - file: jupyter_book_examples/markdown-notebooks
