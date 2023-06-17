@@ -1,5 +1,7 @@
 # City Explorer Android App
 
+*Last updated 2022-12-02*
+
 The City Explorer Android application is a planning system for travelers.
 At its core, the application enables users to optimize their planned
 travel destinations to get the most out of the time available to them.
