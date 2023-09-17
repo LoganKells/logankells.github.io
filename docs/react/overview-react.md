@@ -5,4 +5,4 @@ and MySQL. I've created a few projects using React,
 and I've also created a few tutorials for React and Node.js.
 
 ## My Projects
-- [Recipe List app](../react/javascript-examples.md)
+- [JavaScript Examples - code examples of JavaScript language](../react/javascript-examples.md)
