@@ -6,7 +6,7 @@ tutorials, my resume, and my contact information.
 :alt: fishy
 :class: bg-primary mb-1
 :width: 300px
-:align: left
+:align: right
 ```
 
 ## About me
