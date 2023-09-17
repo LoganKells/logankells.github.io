@@ -1,10 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Logan Kells M.S. CS Candidate & Software Engineer
+title: Homepage
 author: Logan Kells
-email: logan.kells@outlook.com
-logo: images/logo.png
+email: lkells@outlook.com
+logo: images/logo.svg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -19,6 +19,10 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+sphinx:
+  config:
+    html_theme: pydata_sphinx_theme
 
 # Information about where the book exists on the web
 repository:
