@@ -11,14 +11,14 @@ logo: images/logo.svg
 html:
   announcement: "⚠️I'm seeking a Full Stack Software Engineer Role!⚠️"
 #  favicon: images/favicon.ico
-#  google_analytics_id: G-12ZW0P814H
+  google_analytics_id: G-VP9YT90WXT
   home_page_in_navbar: true
 #  use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
   baseurl: https://logankells.com/
   analytics:
-    google_analytics_id = 'G-12ZW0P814H'
+    google_analytics_id = 'G-VP9YT90WXT'
 
 # Bibliography settings
 #bibtex_bibfiles:
