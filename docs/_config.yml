@@ -11,7 +11,7 @@ logo: images/logo.svg
 html:
   announcement: "⚠️I'm seeking a Full Stack Software Engineer Role!⚠️"
 #  favicon: images/favicon.ico
-#  google_analytics_id: UA-52617120-7
+  google_analytics_id: G-12ZW0P814H
   home_page_in_navbar: true
 #  use_edit_page_button: true
   use_repository_button: true
