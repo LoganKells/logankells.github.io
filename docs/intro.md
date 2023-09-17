@@ -2,8 +2,15 @@
 Hello and welcome to my website! Here you will find articles for some of my projects, 
 tutorials, my resume, and my contact information.
 
+```{image} ./images/logankells.png
+:alt: fishy
+:class: bg-primary mb-1
+:width: 300px
+:align: left
+```
+
 ## About me
-My name is Logan Kells and I'm a Software Engineer and an M.S. Computer Science Candidate at the University of Texas at Austin.
+My name is Logan Kells. I'm a Software Engineer 3 and an M.S. Computer Science Candidate at the University of Texas at Austin.
 
 ## Contact me
 Please feel free to contact me on LinkedIn or by Email.
