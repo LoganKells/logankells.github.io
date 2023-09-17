@@ -48,6 +48,7 @@ python = ">3.9, <3.11"
 click = "*"
 # report issue for >=0.18,<0.20 until https://github.com/mcmtroffaes/sphinxcontrib-bibtex/issues/322 is fixed
 docutils = "*"
+ghp-import = "*"
 Jinja2 = "*"
 jsonschema = "*"
 jupyter = "*"
