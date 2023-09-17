@@ -9,6 +9,11 @@ parts:
   - file: machine_learning/overview-machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
+- caption: React Web Development
+  chapters:
+  - file: react/overview-react
+    sections:
+    - file: react/javascript-examples
 - caption: Android Development
   chapters:
   - file: android_development/overview-android-development
