@@ -11,5 +11,5 @@ Each recipe has an ingredients list and a set of directions. Click on the recipe
 Click back to recipe list to view all recipes again.
 
 ### Demo
-<img src="https://media.giphy.com/media/YR1tMy0okxapjgZmS4/giphy.gif" width="60%" height="60%"/>
+<img src="https://media.giphy.com/media/YR1tMy0okxapjgZmS4/giphy.gif" width="200px"/>
 
