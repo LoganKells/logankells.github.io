@@ -1,0 +1,133 @@
+#[build-system]
+#requires = ["flit_core >=3.5,<4"]
+#build-backend = "flit_core.buildapi"
+
+[tool.poetry]
+readme = "README.md"
+name = "logankells.github.io"
+authors = [
+    "Logan Kells <lkells@outlook.com>",
+]
+description = "Logan Kells' personal website"
+version = "0.0.1"
+license = "MIT"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://logankells.com/"
+Documentation = "https://jupyterbook.org"
+Source = "https://github.com/LoganKells/logankells.github.io/"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Logan Kells :: Resume",
+]
+keywords = [
+    "reproducible",
+    "science",
+    "environments",
+    "scholarship",
+    "notebook",
+    "logan",
+    "kells",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">3.9, <3.11"
+click = "*"
+# report issue for >=0.18,<0.20 until https://github.com/mcmtroffaes/sphinxcontrib-bibtex/issues/322 is fixed
+docutils = "*"
+Jinja2 = "*"
+jsonschema = "*"
+jupyter = "*"
+jupyter-book = "^0.15"
+linkify-it-py = "*"
+myst-nb = "*"
+pyyaml = "*"
+sphinx = "^5.0.2"
+sphinx-click = "*"
+sphinx-comments = "*"
+sphinx-copybutton = "*"
+sphinx-external-toc = "*"
+sphinx-inline-tabs = "*"
+sphinx-jupyterbook-latex = "*"
+sphinx-design = "^0.3"
+sphinx-thebe = "*"
+sphinx-book-theme = "*"
+sphinx_togglebutton = "*"
+sphinxcontrib-bibtex = "^2.5"
+sphinx-multitoc-numbering = "*"
+
+[tool.poetry.dev-dependencies]
+
+#[project.optional-dependencies]
+#code_style = ["pre-commit~=3.1"]
+#pdfhtml = ["pyppeteer"]
+#sphinx = [
+#    "altair",
+#    "bokeh",
+#    "folium",
+#    "ipywidgets",
+#    "jupytext",
+#    "matplotlib",
+#    "nbclient",
+#    "numpy",
+#    "pandas",
+#    "plotly",
+#    "sphinx-click",
+#    "sphinx-examples",
+#    "sphinx_inline_tabs",
+#    "sphinx-proof",
+#    "sphinxext-rediraffe~=0.2.3",
+#    "sympy",
+#]
+#testing = [
+#    "altair",
+#    "beautifulsoup4",
+#    "beautifulsoup4",
+#    "cookiecutter",
+#    "coverage",
+#    "jupytext",
+#    "matplotlib",
+#    "pyppeteer",
+#    "pytest>=6.2.4",
+#    "pytest-cov",
+#    "pytest-regressions",
+#    "pytest-timeout",
+#    "pytest-xdist",
+#    "sphinx_click",
+#    "sphinx_tabs",
+#    "texsoup",
+#]
+
+#[project.scripts]
+#jb = "jupyter_book.cli.main:main"
+#jupyter-book = "jupyter_book.cli.main:main"
+
+#[tool.flit.module]
+#name = "jupyter_book"
+#
+#[tool.flit.sdist]
+#exclude = [
+#  ".*",  # Any hidden folders or files
+#  "docs/",
+#  "tests/",
+#  "scripts/",
+#  "tox.ini",
+#  "codecov.yml",
+#  "conftest.py",
+#]
+#
+#[tool.isort]
+#profile = "black"

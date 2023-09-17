@@ -10,7 +10,8 @@ The project is built using Jupyter Book and deployed to Github Pages.
 
 Install project dependencies using Pip.
 
-- `pip install -r docs/requirements.txt`
+- `poetry lock`
+- `poetry install`
 
 ## 2. Build
 

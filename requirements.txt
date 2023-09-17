@@ -1,7 +1,0 @@
-jupyter
-jupyter-book
-notebook
-pip
-setuptools
-SQLAlchemy
-wheel
