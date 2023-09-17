@@ -28,4 +28,5 @@ Github Pages settings.
 
 # References
 
-- https://jupyterbook.org/en/stable/content/index.html
+- HTML generation by JupyterBook: https://jupyterbook.org/en/stable/content/index.html
+- Theming by Sphinx: https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html
