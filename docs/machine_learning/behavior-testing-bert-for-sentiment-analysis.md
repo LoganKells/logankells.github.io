@@ -213,7 +213,7 @@ we observe the model having worse performance on this capability test after trai
 Further exploration of fine tuning methods and their effects on the failure rates for negation capability is warranted,
 but is beyond the scope of this paper.
 
-<img src="https://i.imgur.com/mRzKBT3.png" title="Table 1" width="75%" height="75%"/>
+!["Table 1"](../images/behavioral_testing_bert/table_1.png "Table 1")
 
 **Table 1.** (A) is the NLP Town BERT Base Multilingual Uncased Sentiment model without training on the Amazon Review
 dataset, (B) is the NLP Town BERT Base Multilingual Uncased Sentiment model pre-trained on the Amazon Reviews dataset
@@ -267,7 +267,7 @@ Morris et al., 2020). Giving the model the ability to see these misleading examp
 robustness which is the models susceptibility to adversarial examples Morris et al., 2020). Ultimately, this technique
 will make our model less susceptible to noise that would otherwise make it fail when considering never seen input.
 
-<img src="https://i.imgur.com/La8lm8W.png" title="Table 2" width="50%" height="50%"/>
+!["Table 2"](../images/behavioral_testing_bert/table_2.png "Table 2")
 
 **Table 2.** After performing adversarial training on our model (D) we observe an incredibly large increase in accuracy
 for the negated negative test of 26.2% compared to base model (A). We observe a small decrease in performance in model (
