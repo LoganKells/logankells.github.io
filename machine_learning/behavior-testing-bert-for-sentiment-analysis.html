@@ -180,7 +180,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resume</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resume/resume_logan_kells.html">Logan Kells</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="overview-deep-learning.html">Deep Learning Projects</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="computer-vision-video-game-ai.html">Computer Vision Video Game AI</a></li>
@@ -672,6 +676,7 @@ of 52.5% with the off-the-shelf model. We theorize that the off-the-shelf model 
 we observe the model having worse performance on this capability test after training on the Amazon reviews dataset.
 Further exploration of fine tuning methods and their effects on the failure rates for negation capability is warranted,
 but is beyond the scope of this paper.</p>
+<p><img alt="&quot;Table 1&quot;" src="../_images/table_1.png" /></p>
 <p><strong>Table 1.</strong> (A) is the NLP Town BERT Base Multilingual Uncased Sentiment model without training on the Amazon Review
 dataset, (B) is the NLP Town BERT Base Multilingual Uncased Sentiment model pre-trained on the Amazon Reviews dataset
 for 1 epoch, © is the the NLP Town BERT Base Multilingual Uncased Sentiment model pre-trained on the Amazon Reviews
@@ -721,6 +726,7 @@ on our augmented data which consists of benign examples slightly perturbed such 
 Morris et al., 2020). Giving the model the ability to see these misleading examples allows for increased adversarial
 robustness which is the models susceptibility to adversarial examples Morris et al., 2020). Ultimately, this technique
 will make our model less susceptible to noise that would otherwise make it fail when considering never seen input.</p>
+<p><img alt="&quot;Table 2&quot;" src="../_images/table_2.png" /></p>
 <p><strong>Table 2.</strong> After performing adversarial training on our model (D) we observe an incredibly large increase in accuracy
 for the negated negative test of 26.2% compared to base model (A). We observe a small decrease in performance in model (
 D) with respect to (A) on the negated positive test. Overall, (D) performs better than models (B) and © on both
