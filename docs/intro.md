@@ -12,6 +12,10 @@ tutorials, my resume, and my contact information.
 ## About me
 My name is Logan Kells. I'm a Software Engineer 3 and an M.S. Computer Science Candidate at the University of Texas at Austin.
 
+## Resume
+
+[Resume](./resume/resume_logan_kells.md). Please see my resume for more information about my work experience and education.
+
 ## Contact me
 Please feel free to contact me on LinkedIn or by Email.
 - Through my LinkedIn page: [https://www.linkedin.com/in/logankells/](https://www.linkedin.com/in/logankells/)

@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 parts:
+- caption: Resume
+  chapters:
+  - file: resume/resume_logan_kells
 - caption: Machine Learning
   chapters:
   - file: machine_learning/overview-deep-learning
