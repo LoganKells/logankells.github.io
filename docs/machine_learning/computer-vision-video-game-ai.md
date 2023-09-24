@@ -1,6 +1,6 @@
 # Computer Vision Video Game AI
 
-*Last updated 2021-08-10*
+*Last updated: August 10, 2021*
 
 This is a summary of Deep Learning computer vision game AI for playing a 2 versus 2 hockey game.
 Authors: Logan Kells, Buvaneshwaran T, Amir Ebrahimi, Pranav Kayastha

@@ -9,6 +9,7 @@ parts:
   - file: machine_learning/overview-machine-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
+    - file: machine_learning/behavior-testing-bert-for-sentiment-analysis
 - caption: React Web Development
   chapters:
   - file: react/overview-react
