@@ -6,15 +6,20 @@ root: intro
 parts:
 - caption: Machine Learning
   chapters:
-  - file: machine_learning/overview-machine-learning
+  - file: machine_learning/overview-deep-learning
     sections:
     - file: machine_learning/computer-vision-video-game-ai
-    - file: machine_learning/behavior-testing-bert-for-sentiment-analysis
+  - file: machine_learning/overview-nlp
+    sections:
+      - file: machine_learning/behavior-testing-bert-for-sentiment-analysis
 - caption: React Web Development
   chapters:
-  - file: react/overview-react
+  - file: react/overview-javascript
     sections:
     - file: react/javascript-examples
+  - file: react/overview-react
+    sections:
+    - file: react/react-user-form-example
 - caption: Android Development
   chapters:
   - file: android_development/overview-android-development
