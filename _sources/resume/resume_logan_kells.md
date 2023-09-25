@@ -94,7 +94,7 @@
 
 **2017-2019**
 
-- Managed $5 million engineering project. Improved cost at completion by $300 thousand over one year by optimizing
+- Managed \$5 million engineering project. Improved cost at completion by \$300 thousand over one year by optimizing
   engineering execution and quality assurance processes. Closed with +12% gross margin improvement and achieved customer
   project close sign-off.
 
