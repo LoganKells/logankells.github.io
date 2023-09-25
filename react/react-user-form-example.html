@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -456,181 +456,181 @@ The App component contains the form and the form validation logic.</p>
 The <code class="docutils literal notranslate"><span class="pre">onSubmit</span></code> prop is a function that is called when the form is submitted.</p>
 <p>The various input fields are defined in the form. Each input field has an <code class="docutils literal notranslate"><span class="pre">onChange</span></code> prop.
 The password input type also has an <code class="docutils literal notranslate"><span class="pre">onBlur</span></code> prop.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>&lt;form onSubmit={handleSubmit}&gt;
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>import &quot;./App.css&quot;;
-import { useState } from &quot;react&quot;;
-import { validateEmail } from &quot;./utils&quot;;
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">validateEmail</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./utils&quot;</span><span class="p">;</span>
 
-const PasswordErrorMessage = () =&gt; {
-  return (
-    &lt;p className=&quot;FieldError&quot;&gt;Password should have at least 8 characters&lt;/p&gt;
-  );
-};
+<span class="kd">const</span><span class="w"> </span><span class="nx">PasswordErrorMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;FieldError&quot;</span><span class="p">&gt;</span><span class="nx">Password</span><span class="w"> </span><span class="nx">should</span><span class="w"> </span><span class="nx">have</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">least</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="nx">characters</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
 
-function App() {
-  const [firstName, setFirstName] = useState(&quot;&quot;);
-  const [lastName, setLastName] = useState(&quot;&quot;);
-  const [email, setEmail] = useState(&quot;&quot;);
-  const [password, setPassword] = useState({
-    value: &quot;&quot;,
-    isTouched: false,
-  });
-  const [role, setRole] = useState(&quot;role&quot;);
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">firstName</span><span class="p">,</span><span class="w"> </span><span class="nx">setFirstName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">lastName</span><span class="p">,</span><span class="w"> </span><span class="nx">setLastName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">setEmail</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">setPassword</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">role</span><span class="p">,</span><span class="w"> </span><span class="nx">setRole</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;role&quot;</span><span class="p">);</span>
 
-  const getIsPasswordValid = () =&gt; {
-    // Implement this function
-    return password.value.length &gt;= 8 &amp;&amp; password.isTouched;
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getIsPasswordValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Implement this function</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">password</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">password</span><span class="p">.</span><span class="nx">isTouched</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const getisRoleValid = () =&gt; {
-    return role === &quot;individual&quot; || role === &quot;business&quot;;
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getisRoleValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;individual&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;business&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const getIsEmailValid = () =&gt; {
-    let validationResult = validateEmail(email);
-    if (validationResult !== null &amp;&amp; validateEmail(email).length &gt; 0) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getIsEmailValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">validationResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validateEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">validationResult</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">validateEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">).</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const getIsFirstNameValid = () =&gt; {
-    return firstName.length &gt; 0;
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getIsFirstNameValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">firstName</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const getIsFormValid = () =&gt; {
-    let valid =
-      getIsFirstNameValid() &amp;&amp;
-      getIsEmailValid() &amp;&amp;
-      getIsPasswordValid() &amp;&amp;
-      getisRoleValid();
-    console.log(&quot;getIsEmailValid():&quot;, getIsEmailValid());
-    console.log(&quot;getIsFirstNameValid():&quot;, getIsFirstNameValid());
-    console.log(&quot;getIsPasswordValid():&quot;, getIsPasswordValid());
-    console.log(&quot;getisRoleValid():&quot;, getisRoleValid());
-    console.log(&quot;form is valid:&quot;, valid);
-    return valid;
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getIsFormValid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="nx">getIsFirstNameValid</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">      </span><span class="nx">getIsEmailValid</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">      </span><span class="nx">getIsPasswordValid</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">      </span><span class="nx">getisRoleValid</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;getIsEmailValid():&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getIsEmailValid</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;getIsFirstNameValid():&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getIsFirstNameValid</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;getIsPasswordValid():&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getIsPasswordValid</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;getisRoleValid():&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">getisRoleValid</span><span class="p">());</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;form is valid:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valid</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valid</span><span class="p">;</span>
+<span class="w">  </span><span class="p">};</span>
 
-  function handleEmailChange(e) {
-    let valid = validateEmail(e.target.value);
-    console.log(&quot;email valid:&quot;, valid);
-    setEmail(e.target.value);
-  }
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handleEmailChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validateEmail</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;email valid:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">valid</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setEmail</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
 
-  function handlePasswordChange(e) {
-    setPassword({ value: e.target.value, isTouched: true });
-    if (!getIsPasswordValid(e)) {
-      return PasswordErrorMessage();
-    }
-  }
+<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handlePasswordChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">getIsPasswordValid</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">PasswordErrorMessage</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 
-  const clearForm = () =&gt; {
-    // Implement this function
-    setPassword({ value: &quot;&quot;, isTouched: false });
-    setEmail(&quot;&quot;);
-    setLastName(&quot;&quot;);
-    setFirstName(&quot;&quot;);
-    setRole(&quot;Role&quot;);
-    console.log(&quot;role&quot;, role);
-    console.log(&quot;password&quot;, password.value);
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clearForm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Implement this function</span>
+<span class="w">    </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">setEmail</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setLastName</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setFirstName</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Role&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;role&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const handleSubmit = (e) =&gt; {
-    e.preventDefault();
-    clearForm();
-    alert(&quot;Account created!&quot;);
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">clearForm</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Account created!&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  let passwordWarning = getIsPasswordValid() ? &quot;&quot; : &lt;PasswordErrorMessage /&gt;;
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">passwordWarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getIsPasswordValid</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">PasswordErrorMessage</span> <span class="p">/&gt;;</span>
 
-  // let passwordWarning = &lt;PasswordErrorMessage /&gt;;
-  return (
-    &lt;div className=&quot;App&quot;&gt;
-      &lt;form onSubmit={handleSubmit}&gt;
-        &lt;fieldset&gt;
-          &lt;h2&gt;Sign Up&lt;/h2&gt;
-          &lt;div className=&quot;Field&quot;&gt;
-            &lt;label&gt;
-              First name &lt;sup&gt;*&lt;/sup&gt;
-            &lt;/label&gt;
-            &lt;input
-              placeholder=&quot;First name&quot;
-              value={firstName}
-              onChange={(e) =&gt; setFirstName(e.target.value)}
-            /&gt;
-          &lt;/div&gt;
-          &lt;div className=&quot;Field&quot;&gt;
-            &lt;label&gt;Last name&lt;/label&gt;
-            &lt;input
-              placeholder=&quot;Last name&quot;
-              value={lastName}
-              onChange={(e) =&gt; setLastName(e.target.value)}
-            /&gt;
-          &lt;/div&gt;
-          &lt;div className=&quot;Field&quot;&gt;
-            &lt;label&gt;
-              Email address &lt;sup&gt;*&lt;/sup&gt;
-            &lt;/label&gt;
-            &lt;input
-              placeholder=&quot;Email address&quot;
-              value={email}
-              onChange={handleEmailChange}
-            /&gt;
-          &lt;/div&gt;
-          &lt;div className=&quot;Field&quot;&gt;
-            &lt;label&gt;
-              Password &lt;sup&gt;*&lt;/sup&gt;
-            &lt;/label&gt;
-            &lt;input
-              type={&quot;password&quot;}
-              placeholder=&quot;Password&quot;
-              value={password.value}
-              onChange={handlePasswordChange}
-            /&gt;
-            {passwordWarning}
-          &lt;/div&gt;
-          &lt;div className=&quot;Field&quot;&gt;
-            &lt;label&gt;
-              Role &lt;sup&gt;*&lt;/sup&gt;
-            &lt;/label&gt;
-            &lt;select onChange={(e) =&gt; setRole(e.target.value)} value={role}&gt;
-              &lt;option value=&quot;role&quot;&gt;Role&lt;/option&gt;
-              &lt;option value=&quot;individual&quot;&gt;Individual&lt;/option&gt;
-              &lt;option value=&quot;business&quot;&gt;Business&lt;/option&gt;
-            &lt;/select&gt;
-          &lt;/div&gt;
-          &lt;button type=&quot;submit&quot; disabled={!getIsFormValid()}&gt;
-            Create account
-          &lt;/button&gt;
-        &lt;/fieldset&gt;
-      &lt;/form&gt;
-    &lt;/div&gt;
-  );
-}
+<span class="w">  </span><span class="c1">// let passwordWarning = &lt;PasswordErrorMessage /&gt;;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span><span class="nx">Sign</span><span class="w"> </span><span class="nx">Up</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Field&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">First</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span><span class="o">*</span><span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">input</span>
+              <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;First name&quot;</span>
+              <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">firstName</span><span class="p">}</span>
+              <span class="na">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setFirstName</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+            <span class="p">/&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Field&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span><span class="nx">Last</span><span class="w"> </span><span class="nx">name</span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">input</span>
+              <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Last name&quot;</span>
+              <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">lastName</span><span class="p">}</span>
+              <span class="na">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setLastName</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span>
+            <span class="p">/&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Field&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">Email</span><span class="w"> </span><span class="nx">address</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span><span class="o">*</span><span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">input</span>
+              <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Email address&quot;</span>
+              <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">email</span><span class="p">}</span>
+              <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handleEmailChange</span><span class="p">}</span>
+            <span class="p">/&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Field&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">Password</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span><span class="o">*</span><span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">input</span>
+              <span class="na">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;password&quot;</span><span class="p">}</span>
+              <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Password&quot;</span>
+              <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">password</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
+              <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handlePasswordChange</span><span class="p">}</span>
+            <span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">passwordWarning</span><span class="p">}</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Field&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="nx">Role</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span><span class="o">*</span><span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setRole</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">)}</span> <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">role</span><span class="p">}&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;role&quot;</span><span class="p">&gt;</span><span class="nx">Role</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;individual&quot;</span><span class="p">&gt;</span><span class="nx">Individual</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="w">              </span><span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;business&quot;</span><span class="p">&gt;</span><span class="nx">Business</span><span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">          </span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">disabled</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="nx">getIsFormValid</span><span class="p">()}&gt;</span>
+<span class="w">            </span><span class="nx">Create</span><span class="w"> </span><span class="nx">account</span>
+<span class="w">          </span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
 
-export default App;
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="index-js">
 <h3>index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
 <p>In the index.js file I’ve used the <code class="docutils literal notranslate"><span class="pre">createRoot</span></code> method to render the React app.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span>import React from &quot;react&quot;;
-import ReactDOM from &quot;react-dom/client&quot;;
-import &quot;./index.css&quot;;
-import App from &quot;./components/App&quot;;
-import reportWebVitals from &quot;./reportWebVitals&quot;;
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-dom/client&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s2">&quot;./index.css&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./components/App&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">reportWebVitals</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./reportWebVitals&quot;</span><span class="p">;</span>
 
-const root = ReactDOM.createRoot(document.getElementById(&quot;root&quot;));
-root.render(
-  &lt;React.StrictMode&gt;
-    &lt;App /&gt;
-  &lt;/React.StrictMode&gt;,
-);
+<span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">));</span>
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;,</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </section>
@@ -761,8 +761,8 @@ By Logan Kells
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
