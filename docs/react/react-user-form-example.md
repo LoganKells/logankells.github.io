@@ -19,11 +19,11 @@ The `onSubmit` prop is a function that is called when the form is submitted.
 The various input fields are defined in the form. Each input field has an `onChange` prop.
 The password input type also has an `onBlur` prop.
 
-```javascript
+```jsx
 <form onSubmit={handleSubmit}>
 ```
 
-```javascript
+```jsx
 import "./App.css";
 import { useState } from "react";
 import { validateEmail } from "./utils";
@@ -184,7 +184,7 @@ export default App;
 
 In the index.js file I've used the `createRoot` method to render the React app.
 
-```javascript
+```jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
