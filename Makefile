@@ -7,4 +7,4 @@ build:
 
 deploy:
 	make build
-	ghp-import -n -p -f docs/_build/html
+	ghp-import -n -p -f docs/_build/html -c logankells.com
