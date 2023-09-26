@@ -105,3 +105,4 @@ export default App;
 ## References
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+- https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
