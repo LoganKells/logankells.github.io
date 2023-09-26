@@ -23,6 +23,7 @@ parts:
   - file: react/overview-react
     sections:
     - file: react/react-user-form-example
+    - file: react/react-context-dark-theme-example
 - caption: Android Development
   chapters:
   - file: android_development/overview-android-development
