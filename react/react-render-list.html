@@ -426,9 +426,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#food-js">Food.js</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themecontext-js">ThemeContext.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-index-js">Switch/index.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -542,121 +539,11 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="themecontext-js">
-<h3>ThemeContext.js<a class="headerlink" href="#themecontext-js" title="Permalink to this heading">#</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The ThemeContext.js file contains the context provider and the context.</p>
-<p>The context is defined using the <code class="docutils literal notranslate"><span class="pre">createContext</span></code> method.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>The context provider is defined as a component with the ‘{children}’ prop.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{}</span>
-</pre></div>
-</div>
-</div>
-<h5 a><strong><code>ThemeContext.js</code></strong></h5>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Give the child component a `theme` state</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// Return a `ThemeContext.Provider` component that receives an object</span>
-<span class="w">  </span><span class="c1">// as its value prop, with a `theme` string and a `toggleTheme` function</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="c1">// https://react.dev/reference/react/createContext#provider</span>
-<span class="w">    </span><span class="c1">// Wrap your components into a context provider to specify</span>
-<span class="w">    </span><span class="c1">// the value of this context for all components inside:</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span>
-      <span class="na">value</span><span class="o">=</span><span class="p">{{</span>
-<span class="w">        </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">toggleTheme</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">(</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;dark&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">),</span>
-<span class="w">      </span><span class="p">}}</span>
-    <span class="p">&gt;</span>
-<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="c1">// Change `useTheme` so that it returns `useContext(ThemeContext);`</span>
-<span class="c1">// instead of the `{theme: &quot;light&quot;}` object</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">ThemeContext</span><span class="p">);</span>
-
-<span class="c1">// export const ThemeProvider = ({ children }) =&gt; children;</span>
-<span class="c1">// export const useTheme = () =&gt; ({ theme: &quot;light&quot; });</span>
-<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">};</span>
-</pre></div>
-</div>
-</section>
-<section id="switch-index-js">
-<h3>Switch/index.js<a class="headerlink" href="#switch-index-js" title="Permalink to this heading">#</a></h3>
-<p>The Switch component is a simple checkbox that toggles the theme when clicked.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Switch component is located in ./Switch directory with
-the filename <code class="docutils literal notranslate"><span class="pre">index.js</span></code> and <code class="docutils literal notranslate"><span class="pre">Styles.css</span></code>
-to bundle the component with the custom CSS.</p>
-</div>
-<h5 a><strong><code>./Switch/index.js</code></strong></h5>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./Styles.css&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../ThemeContext&quot;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Use the useTheme hook to get access to `theme` and `toggleTheme`</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
-
-<span class="w">  </span><span class="c1">// Add an `onChange` prop to the input element. When them element changes,</span>
-<span class="w">  </span><span class="c1">// the `toggleTheme` function should be invoked</span>
-<span class="w">  </span><span class="c1">// Change the `checked` prop to be true or false based on the `theme` state.</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;switch&quot;</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
-        <span class="na">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">}</span>
-        <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleTheme</span><span class="p">}</span>
-      <span class="p">/&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;slider round&quot;</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Switch</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="index-js">
-<h3>index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
-<h5 a><strong><code>index.js</code></strong></h5>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="nx">reportWebVitals</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./reportWebVitals&#39;</span><span class="p">;</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
-<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-<span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
-<span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
-<span class="p">);</span>
-
-<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
-<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
-<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
-<span class="nx">reportWebVitals</span><span class="p">();</span>
-</pre></div>
-</div>
-</section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://react.dev/reference/react/useContext">https://react.dev/reference/react/useContext</a></p></li>
-<li><p><a class="reference external" href="https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components">https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components</a></p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map</a></p></li>
 </ul>
 </section>
 </section>
@@ -728,9 +615,6 @@ to bundle the component with the custom CSS.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#food-js">Food.js</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themecontext-js">ThemeContext.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-index-js">Switch/index.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
