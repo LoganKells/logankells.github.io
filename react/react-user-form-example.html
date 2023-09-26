@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://logankells.com/react/react-user-form-example.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Android Apps I’ve Created" href="../android_development/overview-android-development.html" />
+    <link rel="next" title="Creating A Light/Dark Themed React App Using Context" href="react-context-dark-theme-example.html" />
     <link rel="prev" title="React Projects" href="overview-react.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -203,6 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="overview-react.html">React Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Creating React User Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 </ul>
 </li>
 </ul>
@@ -452,13 +453,29 @@ registering a new user.</p>
 <h3>App.js<a class="headerlink" href="#app-js" title="Permalink to this heading">#</a></h3>
 <p>The React app is contained in the App component.
 The App component contains the form and the form validation logic.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The user form is defined in React and includes the <code class="docutils literal notranslate"><span class="pre">onSubmit</span></code> prop.
 The <code class="docutils literal notranslate"><span class="pre">onSubmit</span></code> prop is a function that is called when the form is submitted.</p>
-<p>The various input fields are defined in the form. Each input field has an <code class="docutils literal notranslate"><span class="pre">onChange</span></code> prop.
-The password input type also has an <code class="docutils literal notranslate"><span class="pre">onBlur</span></code> prop.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">}&gt;</span>
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The various input fields are defined in the form. Each input field has an <code class="docutils literal notranslate"><span class="pre">onChange</span></code> prop.
+The password input type also has an <code class="docutils literal notranslate"><span class="pre">onBlur</span></code> prop.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span>
+              <span class="na">type</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;password&quot;</span><span class="p">}</span>
+              <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Password&quot;</span>
+              <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">password</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
+              <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handlePasswordChange</span><span class="p">}</span>
+              <span class="na">onBlur</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">})}</span>
+            <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</div>
+<h5 a><strong><code>App.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">validateEmail</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./utils&quot;</span><span class="p">;</span>
@@ -522,7 +539,7 @@ The password input type also has an <code class="docutils literal notranslate"><
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">handlePasswordChange</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="p">});</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">getIsPasswordValid</span><span class="p">(</span><span class="nx">e</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">PasswordErrorMessage</span><span class="p">();</span>
 <span class="w">    </span><span class="p">}</span>
@@ -590,6 +607,7 @@ The password input type also has an <code class="docutils literal notranslate"><
               <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;Password&quot;</span>
               <span class="na">value</span><span class="o">=</span><span class="p">{</span><span class="nx">password</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
               <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">handlePasswordChange</span><span class="p">}</span>
+              <span class="na">onBlur</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setPassword</span><span class="p">({</span><span class="w"> </span><span class="p">...</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">isTouched</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">})}</span>
             <span class="p">/&gt;</span>
 <span class="w">            </span><span class="p">{</span><span class="nx">passwordWarning</span><span class="p">}</span>
 <span class="w">          </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -618,7 +636,14 @@ The password input type also has an <code class="docutils literal notranslate"><
 </section>
 <section id="index-js">
 <h3>index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>In the index.js file I’ve used the <code class="docutils literal notranslate"><span class="pre">createRoot</span></code> method to render the React app.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;root&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<h5 a><strong><code>index.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react-dom/client&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s2">&quot;./index.css&quot;</span><span class="p">;</span>
@@ -684,11 +709,11 @@ The password input type also has an <code class="docutils literal notranslate"><
       </div>
     </a>
     <a class="right-next"
-       href="../android_development/overview-android-development.html"
+       href="react-context-dark-theme-example.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Android Apps I’ve Created</p>
+        <p class="prev-next-title">Creating A Light/Dark Themed React App Using Context</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

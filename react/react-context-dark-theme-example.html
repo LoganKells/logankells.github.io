@@ -1,0 +1,803 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Creating A Light/Dark Themed React App Using Context &#8212; Logan Kells Software Engineer &amp; MSCS Candidate</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-VP9YT90WXT"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-VP9YT90WXT');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'react/react-context-dark-theme-example';</script>
+    <link rel="canonical" href="https://logankells.com/react/react-context-dark-theme-example.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Android Apps I’ve Created" href="../android_development/overview-android-development.html" />
+    <link rel="prev" title="Creating React User Forms" href="react-user-form-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">⚠️I'm seeking a Full Stack Software Engineer Role!⚠️</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resume</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resume/resume_logan_kells.html">Logan Kells</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine Learning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../machine_learning/overview-deep-learning.html">Deep Learning Projects</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine_learning/computer-vision-video-game-ai.html">Computer Vision Video Game AI</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../machine_learning/overview-nlp.html">Natural Language Processing Projects</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../machine_learning/behavior-testing-bert-for-sentiment-analysis.html">Behavioral Testing of BERT Model for Sentiment Analysis</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">React Web Development</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="overview-javascript.html">JavaScript</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="javascript-examples.html">JavaScript Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview-react.html">React Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="react-user-form-example.html">Creating React User Forms</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Creating A Light/Dark Themed React App Using Context</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Android Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../android_development/overview-android-development.html">Android Apps I’ve Created</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../android_development/city-explorer-app.html">City Explorer Android App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../android_development/reddit-app.html">Reddit Android App</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">iOS App Development</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../swift_ui/overview-swift-ui.html">iOS Apps I’ve Created</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../swift_ui/recipe-list.html">Recipe List</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Reviews</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../course_reviews/overview-course-reviews.html">Course Reviews</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../course_reviews/review-android-programming.html">Android Programming (CS 386P) Review</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/LoganKells/logankells.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Freact/react-context-dark-theme-example.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/react/react-context-dark-theme-example.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating A Light/Dark Themed React App Using Context</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themecontext-js">ThemeContext.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-index-js">Switch/index.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-a-light-dark-themed-react-app-using-context">
+<h1>Creating A Light/Dark Themed React App Using Context<a class="headerlink" href="#creating-a-light-dark-themed-react-app-using-context" title="Permalink to this heading">#</a></h1>
+<p><em>Last Updated: September 26, 2023</em></p>
+<p><a class="reference external" href="https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-light-dark-theme-using-context">My project source code is available here</a></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>React Context is a way to pass data through the component tree without having to pass props down manually at every
+level.
+In this app, I’ve created a basic light/dark theme switcher using React Context.</p>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h2>
+<section id="app-js">
+<h3>App.js<a class="headerlink" href="#app-js" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can see the context provider is defined in the App component of App.js.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Root</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<h5 a><strong><code>App.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./ThemeContext&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Switch&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">h2</span>
+      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span>
+      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">loving</span><span class="w"> </span><span class="nx">family</span><span class="p">.</span><span class="w"> </span><span class="nx">And</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">years</span><span class="p">,</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span>
+<span class="w">        </span><span class="nx">searched</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">perfect</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">dough</span><span class="w"> </span><span class="nx">recipe</span><span class="p">.</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">tried</span><span class="w"> </span><span class="nx">dozens</span><span class="p">,</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">more</span><span class="p">.</span>
+<span class="w">        </span><span class="nx">And</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nx">some</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">good</span><span class="p">,</span><span class="w"> </span><span class="nx">none</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">them</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">recipe</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">would</span><span class="w"> </span><span class="nx">make</span>
+<span class="w">        </span><span class="nx">me</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">trying</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">others</span><span class="p">.</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">Little</span><span class="w"> </span><span class="nx">Lemon</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Switch</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Page&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">When</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">comes</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">dough</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Content</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span>
+      <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span>
+      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span> <span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">Page</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">Root</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Root</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="themecontext-js">
+<h3>ThemeContext.js<a class="headerlink" href="#themecontext-js" title="Permalink to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ThemeContext.js file contains the context provider and the context.</p>
+<p>The context is defined using the <code class="docutils literal notranslate"><span class="pre">createContext</span></code> method.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The context provider is defined as a component with the ‘{children}’ prop.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+<h5 a><strong><code>ThemeContext.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Give the child component a `theme` state</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Return a `ThemeContext.Provider` component that receives an object</span>
+<span class="w">  </span><span class="c1">// as its value prop, with a `theme` string and a `toggleTheme` function</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="c1">// https://react.dev/reference/react/createContext#provider</span>
+<span class="w">    </span><span class="c1">// Wrap your components into a context provider to specify</span>
+<span class="w">    </span><span class="c1">// the value of this context for all components inside:</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span>
+      <span class="na">value</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">        </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">toggleTheme</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">(</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;dark&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">),</span>
+<span class="w">      </span><span class="p">}}</span>
+    <span class="p">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// Change `useTheme` so that it returns `useContext(ThemeContext);`</span>
+<span class="c1">// instead of the `{theme: &quot;light&quot;}` object</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">useContext</span><span class="p">(</span><span class="nx">ThemeContext</span><span class="p">);</span>
+
+<span class="c1">// export const ThemeProvider = ({ children }) =&gt; children;</span>
+<span class="c1">// export const useTheme = () =&gt; ({ theme: &quot;light&quot; });</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="switch-index-js">
+<h3>Switch/index.js<a class="headerlink" href="#switch-index-js" title="Permalink to this heading">#</a></h3>
+<p>The Switch component is a simple checkbox that toggles the theme when clicked.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Switch component is located in ./Switch directory with
+the filename <code class="docutils literal notranslate"><span class="pre">index.js</span></code> and <code class="docutils literal notranslate"><span class="pre">Styles.css</span></code>
+to bundle the component with the custom CSS.</p>
+</div>
+<h5 a><strong><code>./Switch/index.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./Styles.css&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../ThemeContext&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Use the useTheme hook to get access to `theme` and `toggleTheme`</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Add an `onChange` prop to the input element. When them element changes,</span>
+<span class="w">  </span><span class="c1">// the `toggleTheme` function should be invoked</span>
+<span class="w">  </span><span class="c1">// Change the `checked` prop to be true or false based on the `theme` state.</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;switch&quot;</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">input</span>
+        <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
+        <span class="na">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">}</span>
+        <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleTheme</span><span class="p">}</span>
+      <span class="p">/&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;slider round&quot;</span> <span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Switch</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="index-js">
+<h3>index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
+<h5 a><strong><code>index.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="s1">&#39;./index.css&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">reportWebVitals</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./reportWebVitals&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
+<span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="p">);</span>
+
+<span class="c1">// If you want to start measuring performance in your app, pass a function</span>
+<span class="c1">// to log results (for example: reportWebVitals(console.log))</span>
+<span class="c1">// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals</span>
+<span class="nx">reportWebVitals</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://react.dev/reference/react/useContext">https://react.dev/reference/react/useContext</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "LoganKells/logankells.github.io",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./react"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="react-user-form-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating React User Forms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../android_development/overview-android-development.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Android Apps I’ve Created</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#themecontext-js">ThemeContext.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-index-js">Switch/index.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Logan Kells
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
