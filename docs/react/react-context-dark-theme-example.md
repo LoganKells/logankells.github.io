@@ -28,12 +28,26 @@ function Root() {
 ```
 :::
 
+:::{note}
+We can avoid re-rendering of components in the context tree using memoization in React.
+
+https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components
+
+This is applied using the `memo()` function hook.
+
+```jsx
+import { memo } from "react";
+
+const App = memo(() => {});
+```
+:::
 <h5 a><strong><code>App.js</code></strong></h5>
 
 ```jsx
 import "./App.css";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 import Switch from "./Switch";
+import { memo } from "react";
 
 const Title = ({ children }) => {
   const { theme, toggleTheme } = useTheme();
@@ -92,7 +106,8 @@ const Page = () => {
   );
 };
 
-function App() {
+// using memoization: https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components
+const App = memo(() => {
   const { theme, toggleTheme } = useTheme();
   return (
     <div
@@ -105,7 +120,7 @@ function App() {
       <Page />
     </div>
   );
-}
+});
 
 function Root() {
   return (
@@ -237,3 +252,4 @@ reportWebVitals();
 ## References
 
 - https://react.dev/reference/react/useContext
+- https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components
