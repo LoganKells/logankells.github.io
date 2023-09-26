@@ -13,15 +13,32 @@ registering a new user.
 The React app is contained in the App component.
 The App component contains the form and the form validation logic.
 
+:::{note}
 The user form is defined in React and includes the `onSubmit` prop. 
 The `onSubmit` prop is a function that is called when the form is submitted.
-
-The various input fields are defined in the form. Each input field has an `onChange` prop.
-The password input type also has an `onBlur` prop.
 
 ```jsx
 <form onSubmit={handleSubmit}>
 ```
+
+:::
+
+:::{note}
+The various input fields are defined in the form. Each input field has an `onChange` prop.
+The password input type also has an `onBlur` prop.
+
+```jsx
+<input
+              type={"password"}
+              placeholder="Password"
+              value={password.value}
+              onChange={handlePasswordChange}
+              onBlur={(e) => setPassword({ ...password, isTouched: true })}
+            />
+```
+:::
+
+<h5 a><strong><code>App.js</code></strong></h5>
 
 ```jsx
 import "./App.css";
@@ -87,7 +104,7 @@ function App() {
   }
 
   function handlePasswordChange(e) {
-    setPassword({ value: e.target.value, isTouched: true });
+    setPassword({ ...password, value: e.target.value });
     if (!getIsPasswordValid(e)) {
       return PasswordErrorMessage();
     }
@@ -155,6 +172,7 @@ function App() {
               placeholder="Password"
               value={password.value}
               onChange={handlePasswordChange}
+              onBlur={(e) => setPassword({ ...password, isTouched: true })}
             />
             {passwordWarning}
           </div>
@@ -178,11 +196,20 @@ function App() {
 }
 
 export default App;
+
 ```
 
 ### index.js
 
+:::{note}
 In the index.js file I've used the `createRoot` method to render the React app.
+
+```jsx
+const root = ReactDOM.createRoot(document.getElementById("root"));
+```
+:::
+
+<h5 a><strong><code>index.js</code></strong></h5>
 
 ```jsx
 import React from "react";

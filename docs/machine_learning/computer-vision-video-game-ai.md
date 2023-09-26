@@ -2,8 +2,14 @@
 
 *Last updated: August 10, 2021*
 
+:::{admonition} Authors
+:class: tip
+Logan Kells, Buvaneshwaran T, Amir Ebrahimi, Pranav Kayastha
+:::
+
+:::{note}
 This is a summary of Deep Learning computer vision game AI for playing a 2 versus 2 hockey game.
-Authors: Logan Kells, Buvaneshwaran T, Amir Ebrahimi, Pranav Kayastha
+:::
 
 ## Demo
 The objective is to score goals against AI in a hockey style of video game. Our controller uses exclusively screen space images to perform object and goal detection plus a bespoke controller logic to control the player steering.
