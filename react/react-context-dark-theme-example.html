@@ -468,10 +468,22 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 </pre></div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can avoid re-rendering of components in the context tree using memoization in React.</p>
+<p><a class="reference external" href="https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components">https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components</a></p>
+<p>This is applied using the <code class="docutils literal notranslate"><span class="pre">memo()</span></code> function hook.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">memo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+</pre></div>
+</div>
+</div>
 <h5 a><strong><code>App.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./ThemeContext&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Switch&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
@@ -530,7 +542,8 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 <span class="w">  </span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="c1">// using memoization: https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">memo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span>
@@ -543,7 +556,7 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 <span class="w">      </span><span class="p">&lt;</span><span class="nt">Page</span> <span class="p">/&gt;</span>
 <span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="p">);</span>
-<span class="p">}</span>
+<span class="p">});</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Root</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
@@ -671,6 +684,7 @@ to bundle the component with the custom CSS.</p>
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://react.dev/reference/react/useContext">https://react.dev/reference/react/useContext</a></p></li>
+<li><p><a class="reference external" href="https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components">https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components</a></p></li>
 </ul>
 </section>
 </section>
