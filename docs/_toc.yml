@@ -17,10 +17,10 @@ parts:
       - file: machine_learning/behavior-testing-bert-for-sentiment-analysis
 - caption: React Web Development
   chapters:
-  - file: react/overview-javascript
+  - file: react/overview-javascript-guides
     sections:
     - file: react/javascript-examples
-  - file: react/overview-react
+  - file: react/overview-react-guides
     sections:
     - file: react/react-user-form-example
     - file: react/react-context-dark-theme-example
