@@ -31,7 +31,7 @@ function Root() {
 :::{note}
 We can avoid re-rendering of components in the context tree using memoization in React.
 
-https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components
+https://react.dev/reference/react/memo#memo
 
 This is applied using the `memo()` function hook.
 
