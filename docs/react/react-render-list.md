@@ -2,7 +2,7 @@
 
 *Last Updated: September 26, 2023*
 
-[My project source code is available here]()
+[My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-basic-list)
 
 ## Overview
 
