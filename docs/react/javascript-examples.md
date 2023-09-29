@@ -9,10 +9,6 @@ I've used in my projects.
 The map method creates a new array populated with the results of the callback
 function on every element in the calling array.
 
-#### References:
-
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-
 ```javascript
 const data = [
     {
@@ -52,17 +48,12 @@ const newDesserts = desserts.map((dessert) => {
     }
 })
 console.log('newDesserts: ', newDesserts)
-
 ```
 
 ### Array.prototype.sort()
 
 The sort method sorts the elements of an array using a callback function, 
 in place, and returns the array.
-
-#### References:
-
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 ```javascript
 const desserts = [
@@ -93,15 +84,11 @@ const dataList = desserts.sort(
     (itemA, itemB) => itemA.calories - itemB.calories
 )
 console.log(dataList)
-
 ```
 
 ### Array basics
 
 Working with arrays in JavaScript using basics such as push, pop, shift, and forEach.
-
-#### References:
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays
 
 ```javascript
 // Working with Arrays
@@ -154,5 +141,9 @@ function arrayForEach() {
     })
 }
 arrayForEach()
-
 ```
+
+### References:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort

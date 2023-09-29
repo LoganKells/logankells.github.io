@@ -228,5 +228,5 @@ root.render(
 
 ## References
 
-- [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-registration-form).
 - [React docs - Forms](https://reactjs.org/docs/forms.html)
+- [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-registration-form)
