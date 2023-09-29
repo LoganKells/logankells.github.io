@@ -33,6 +33,14 @@ setData((prevValue) => {
     return { ...prevValue, id: clickCount };
 });
 ```
+
+Finally, note the useage of `useEffect()` to handle side effects. 
+In this case, we are logging the `data` object to the console.
+```jsx
+useEffect(() => {
+    console.log(data);
+  }, [data]);
+```
 :::
 
 <h5 a><strong><code>App.js</code></strong></h5>
@@ -40,7 +48,7 @@ setData((prevValue) => {
 ```jsx
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState({ id: 0, name: "Logan", lastName: "Kells" });
@@ -51,7 +59,11 @@ function App() {
       return { ...prevValue, id: clickCount };
     });
   }
-  console.log(data);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div className="App">
       <header className="App-header">
