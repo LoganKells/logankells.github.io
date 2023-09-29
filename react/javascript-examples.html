@@ -205,6 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="react-user-form-example.html">Creating React User Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-render-list.html">Rendering a list in React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -423,18 +424,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-map">Array.prototype.map()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-sort">Array.prototype.sort()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">References:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-basics">Array basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">References:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-map">Array.prototype.map()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-sort">Array.prototype.sort()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-basics">Array basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
 </ul>
 </li>
 </ul>
@@ -458,11 +451,6 @@ I’ve used in my projects.</p>
 <h3>Array.prototype.map()<a class="headerlink" href="#array-prototype-map" title="Permalink to this heading">#</a></h3>
 <p>The map method creates a new array populated with the results of the callback
 function on every element in the calling array.</p>
-<section id="references">
-<h4>References:<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map</a></p></li>
-</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
@@ -504,16 +492,10 @@ function on every element in the calling array.</p>
 </pre></div>
 </div>
 </section>
-</section>
 <section id="array-prototype-sort">
 <h3>Array.prototype.sort()<a class="headerlink" href="#array-prototype-sort" title="Permalink to this heading">#</a></h3>
 <p>The sort method sorts the elements of an array using a callback function,
 in place, and returns the array.</p>
-<section id="id1">
-<h4>References:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</a></p></li>
-</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Chocolate Cake&#39;</span><span class="p">,</span>
@@ -545,15 +527,9 @@ in place, and returns the array.</p>
 </pre></div>
 </div>
 </section>
-</section>
 <section id="array-basics">
 <h3>Array basics<a class="headerlink" href="#array-basics" title="Permalink to this heading">#</a></h3>
 <p>Working with arrays in JavaScript using basics such as push, pop, shift, and forEach.</p>
-<section id="id2">
-<h4>References:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays</a></p></li>
-</ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Working with Arrays</span>
 
 <span class="c1">// ----------------</span>
@@ -607,6 +583,12 @@ in place, and returns the array.</p>
 </pre></div>
 </div>
 </section>
+<section id="references">
+<h3>References:<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map</a></p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</a></p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -675,18 +657,10 @@ in place, and returns the array.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">Arrays</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-map">Array.prototype.map()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-sort">Array.prototype.sort()</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">References:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-basics">Array basics</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">References:</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-map">Array.prototype.map()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-prototype-sort">Array.prototype.sort()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-basics">Array basics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References:</a></li>
 </ul>
 </li>
 </ul>
