@@ -1,11 +1,12 @@
 # JavaScript Examples
 
-This page contains code examples of JavaScript language features 
+This page contains code examples of JavaScript language features
 I've used in my projects.
 
 ## Arrays
 
 ### Array.prototype.map()
+
 The map method creates a new array populated with the results of the callback
 function on every element in the calling array.
 
@@ -28,7 +29,7 @@ const data = [
     },
 ]
 const topDesserts = data.map((desert) => {
-    return { content: `${desert.title} - ${desert.description}` }
+    return {content: `${desert.title} - ${desert.description}`}
 })
 console.log('topDesserts: ', topDesserts)
 
@@ -52,7 +53,7 @@ console.log('newDesserts: ', newDesserts)
 
 ### Array.prototype.sort()
 
-The sort method sorts the elements of an array using a callback function, 
+The sort method sorts the elements of an array using a callback function,
 in place, and returns the array.
 
 ```javascript
@@ -128,6 +129,7 @@ function arrayUpdates() {
     }
     console.log(`After popping, gifts: ${gifts}`)
 }
+
 arrayUpdates()
 
 /*
@@ -140,6 +142,7 @@ function arrayForEach() {
         console.log(i, n)
     })
 }
+
 arrayForEach()
 ```
 

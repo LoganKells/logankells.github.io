@@ -16,23 +16,41 @@ iterating the `id` property each time a button is clicked.
 :::{note}
 The user object `data` is using the `useState()` hook. The `id` property is being updated using the `updateData()`
 callback function.
+
 ```jsx
-const [data, setData] = useState({ id: 0, name: "Logan", lastName: "Kells" });
-  let [clickCount, setClickCount] = useState(0);
-  function updateData() {
+const [data, setData] = useState({id: 0, name: "Logan", lastName: "Kells"});
+let [clickCount, setClickCount] = useState(0);
+
+function updateData() {
     setClickCount(++clickCount);
     setData((prevValue) => {
-      return { ...prevValue, id: clickCount };
+        return {...prevValue, id: clickCount};
     });
-  }
+}
 ```
 
-We can see the arrow function is being used in the `setData()` function to update the `id` property of the `data` object.
+We can see the arrow function is being used in the `setData()` function to update the `id` property of the `data`
+object.
+
 ```jsx
 setData((prevValue) => {
-    return { ...prevValue, id: clickCount };
+    return {...prevValue, id: clickCount};
 });
 ```
+
+Finally, note the useage of `useEffect()` to handle side effects.
+In this case, we are logging the `data` object to the console.
+In the below example, the object literal variable `data` is
+passed as the second parameter in an array.
+That means that the effect will only be re-run if the `data`
+changes between renders.
+
+```jsx
+useEffect(() => {
+    console.log(data);
+}, [data]);
+```
+
 :::
 
 <h5 a><strong><code>App.js</code></strong></h5>
@@ -40,37 +58,42 @@ setData((prevValue) => {
 ```jsx
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 function App() {
-  const [data, setData] = useState({ id: 0, name: "Logan", lastName: "Kells" });
-  let [clickCount, setClickCount] = useState(0);
-  function updateData() {
-    setClickCount(++clickCount);
-    setData((prevValue) => {
-      return { ...prevValue, id: clickCount };
-    });
-  }
-  console.log(data);
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <button onClick={updateData}>Update Data</button>
-    </div>
-  );
+    const [data, setData] = useState({id: 0, name: "Logan", lastName: "Kells"});
+    let [clickCount, setClickCount] = useState(0);
+
+    function updateData() {
+        setClickCount(++clickCount);
+        setData((prevValue) => {
+            return {...prevValue, id: clickCount};
+        });
+    }
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React
+                </a>
+            </header>
+            <button onClick={updateData}>Update Data</button>
+        </div>
+    );
 }
 
 export default App;
@@ -89,9 +112,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <App/>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
