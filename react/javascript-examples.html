@@ -206,6 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-render-list.html">Rendering a list in React</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
 </ul>
 </li>
 </ul>
@@ -469,7 +470,7 @@ function on every element in the calling array.</p>
 <span class="w">    </span><span class="p">},</span>
 <span class="p">]</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">topDesserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">desert</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">desert</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">desert</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">desert</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">desert</span><span class="p">.</span><span class="nx">description</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span>
 <span class="p">})</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;topDesserts: &#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">topDesserts</span><span class="p">)</span>
 
@@ -567,6 +568,7 @@ in place, and returns the array.</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`After popping, gifts: </span><span class="si">${</span><span class="nx">gifts</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 <span class="p">}</span>
+
 <span class="nx">arrayUpdates</span><span class="p">()</span>
 
 <span class="cm">/*</span>
@@ -579,6 +581,7 @@ in place, and returns the array.</p>
 <span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="w"> </span><span class="nx">n</span><span class="p">)</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="p">}</span>
+
 <span class="nx">arrayForEach</span><span class="p">()</span>
 </pre></div>
 </div>

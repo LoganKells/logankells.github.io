@@ -206,6 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Rendering a list in React</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
 </ul>
 </li>
 </ul>
@@ -457,8 +458,8 @@ document.write(`
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">desserts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">itemText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`data.title`</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;{</span><span class="nx">itemText</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;;</span>
-<span class="w">  </span><span class="p">});</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;{</span><span class="nx">listItems</span><span class="p">}&lt;/</span><span class="nt">ul</span><span class="p">&gt;;</span>
+<span class="p">});</span>
+<span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;{</span><span class="nx">listItems</span><span class="p">}&lt;/</span><span class="nt">ul</span><span class="p">&gt;;</span>
 </pre></div>
 </div>
 </div>
@@ -466,40 +467,40 @@ document.write(`
 <h3>Food.js<a class="headerlink" href="#food-js" title="Permalink to this heading">#</a></h3>
 <h5 a><strong><code>Food.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">desserts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tiramisu&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;The best in town&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$5.00&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lemon Ice Cream&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mind blowing taste&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$4.50&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Chocolate mousse&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Unexplored flavours&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$6.00&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Tiramisu&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;The best in town&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$5.00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Lemon Ice Cream&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mind blowing taste&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$4.50&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Chocolate mousse&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Unexplored flavours&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">price</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;$6.00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">];</span>
 
 <span class="cm">/**</span>
 <span class="cm"> * Simple Food list</span>
 <span class="cm"> * */</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">Food</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// using React key to help React diff algorithm</span>
-<span class="w">  </span><span class="c1">// https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">desserts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">dessert</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">itemText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">price</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;{</span><span class="nx">itemText</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;;</span>
-<span class="w">  </span><span class="p">});</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;{</span><span class="nx">listItems</span><span class="p">}&lt;/</span><span class="nt">ul</span><span class="p">&gt;;</span>
+<span class="w">    </span><span class="c1">// using React key to help React diff algorithm</span>
+<span class="w">    </span><span class="c1">// https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">desserts</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">dessert</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">itemText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> - </span><span class="si">${</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">price</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="o">=</span><span class="p">{</span><span class="nx">dessert</span><span class="p">.</span><span class="nx">id</span><span class="p">}&gt;{</span><span class="nx">itemText</span><span class="p">}&lt;/</span><span class="nt">li</span><span class="p">&gt;;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;{</span><span class="nx">listItems</span><span class="p">}&lt;/</span><span class="nt">ul</span><span class="p">&gt;;</span>
 <span class="p">}</span>
 
-<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Food</span><span class="w"> </span><span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="nx">Food</span><span class="p">};</span>
 </pre></div>
 </div>
 </section>
@@ -512,28 +513,28 @@ document.write(`
 <h5 a><strong><code>App.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">logo</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logo.svg&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Food</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Food&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">Food</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Food&quot;</span><span class="p">;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-header&quot;</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-logo&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="p">/&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">          </span><span class="nx">Edit</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="nx">src</span><span class="o">/</span><span class="nx">App</span><span class="p">.</span><span class="nx">js</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">save</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">reload</span><span class="p">.</span>
-<span class="w">        </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">a</span>
-          <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-link&quot;</span>
-          <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://reactjs.org&quot;</span>
-          <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span>
-          <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span>
-        <span class="p">&gt;</span>
-<span class="w">          </span><span class="nx">Learn</span><span class="w"> </span><span class="nx">React</span>
-<span class="w">        </span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">Food</span> <span class="p">/&gt;</span>
-<span class="w">      </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-header&quot;</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-logo&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;logo&quot;</span><span class="p">/&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                    </span><span class="nx">Edit</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="nx">src</span><span class="o">/</span><span class="nx">App</span><span class="p">.</span><span class="nx">js</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">save</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">reload</span><span class="p">.</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">a</span>
+                    <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-link&quot;</span>
+                    <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://reactjs.org&quot;</span>
+                    <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span>
+                    <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span>
+                <span class="p">&gt;</span>
+<span class="w">                    </span><span class="nx">Learn</span><span class="w"> </span><span class="nx">React</span>
+<span class="w">                </span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">Food</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>

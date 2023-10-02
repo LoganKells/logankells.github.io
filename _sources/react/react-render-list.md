@@ -17,9 +17,10 @@ We can render a list of items in React using the `map()` function.
 const listItems = desserts.map((data) => {
     const itemText = `data.title`;
     return <li key={data.id}>{itemText}</li>;
-  });
-  return <ul>{listItems}</ul>;
+});
+return <ul>{listItems}</ul>;
 ```
+
 :::
 
 ### Food.js
@@ -28,40 +29,40 @@ const listItems = desserts.map((data) => {
 
 ```jsx
 const desserts = [
-  {
-    id: "1",
-    title: "Tiramisu",
-    description: "The best in town",
-    price: "$5.00",
-  },
-  {
-    id: "2",
-    title: "Lemon Ice Cream",
-    description: "Mind blowing taste",
-    price: "$4.50",
-  },
-  {
-    id: "3",
-    title: "Chocolate mousse",
-    description: "Unexplored flavours",
-    price: "$6.00",
-  },
+    {
+        id: "1",
+        title: "Tiramisu",
+        description: "The best in town",
+        price: "$5.00",
+    },
+    {
+        id: "2",
+        title: "Lemon Ice Cream",
+        description: "Mind blowing taste",
+        price: "$4.50",
+    },
+    {
+        id: "3",
+        title: "Chocolate mousse",
+        description: "Unexplored flavours",
+        price: "$6.00",
+    },
 ];
 
 /**
  * Simple Food list
  * */
 function Food() {
-  // using React key to help React diff algorithm
-  // https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
-  const listItems = desserts.map((dessert) => {
-    const itemText = `${dessert.title} - ${dessert.price}`;
-    return <li key={dessert.id}>{itemText}</li>;
-  });
-  return <ul>{listItems}</ul>;
+    // using React key to help React diff algorithm
+    // https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
+    const listItems = desserts.map((dessert) => {
+        const itemText = `${dessert.title} - ${dessert.price}`;
+        return <li key={dessert.id}>{itemText}</li>;
+    });
+    return <ul>{listItems}</ul>;
 }
 
-export { Food };
+export {Food};
 ```
 
 ### App.js
@@ -75,28 +76,28 @@ This `App.js` from create-react-app is only modified to include the `<Food />` c
 ```jsx
 import logo from "./logo.svg";
 import "./App.css";
-import { Food } from "./Food";
+import {Food} from "./Food";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Food />
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo"/>
+                <p>
+                    Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                    className="App-link"
+                    href="https://reactjs.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Learn React
+                </a>
+                <Food/>
+            </header>
+        </div>
+    );
 }
 
 export default App;

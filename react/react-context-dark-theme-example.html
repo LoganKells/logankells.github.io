@@ -206,6 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-render-list.html">Rendering a list in React</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
 </ul>
 </li>
 </ul>
@@ -461,111 +462,109 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 <p class="admonition-title">Note</p>
 <p>We can see the context provider is defined in the App component of App.js.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Root</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p>We can avoid re-rendering of components in the context tree using memoization in React.</p>
 <p><a class="reference external" href="https://react.dev/reference/react/memo#memo">https://react.dev/reference/react/memo#memo</a></p>
 <p>This is applied using the <code class="docutils literal notranslate"><span class="pre">memo()</span></code> function hook.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">memo</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">memo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">memo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>
 <h5 a><strong><code>App.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./ThemeContext&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./ThemeContext&quot;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./Switch&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">memo</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">memo</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">h2</span>
-      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="p">}}</span>
-    <span class="p">&gt;</span>
-<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">h2</span>
+            <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">                </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}}</span>
+        <span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">Paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">p</span>
-      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="p">}}</span>
-    <span class="p">&gt;</span>
-<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Paragraph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">p</span>
+            <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">                </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}}</span>
+        <span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">loving</span><span class="w"> </span><span class="nx">family</span><span class="p">.</span><span class="w"> </span><span class="nx">And</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">years</span><span class="p">,</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span>
-<span class="w">        </span><span class="nx">searched</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">perfect</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">dough</span><span class="w"> </span><span class="nx">recipe</span><span class="p">.</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">tried</span><span class="w"> </span><span class="nx">dozens</span><span class="p">,</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">more</span><span class="p">.</span>
-<span class="w">        </span><span class="nx">And</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nx">some</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">good</span><span class="p">,</span><span class="w"> </span><span class="nx">none</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">them</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">recipe</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">would</span><span class="w"> </span><span class="nx">make</span>
-<span class="w">        </span><span class="nx">me</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">trying</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">others</span><span class="p">.</span>
-<span class="w">      </span><span class="p">&lt;/</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">We</span><span class="w"> </span><span class="nx">are</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">loving</span><span class="w"> </span><span class="nx">family</span><span class="p">.</span><span class="w"> </span><span class="nx">And</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">years</span><span class="p">,</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">searched</span><span class="w"> </span><span class="nx">and</span>
+<span class="w">                </span><span class="nx">searched</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">perfect</span><span class="w"> </span><span class="nx">pizza</span><span class="w"> </span><span class="nx">dough</span><span class="w"> </span><span class="nx">recipe</span><span class="p">.</span><span class="w"> </span><span class="nx">I</span><span class="w"> </span><span class="nx">tried</span><span class="w"> </span><span class="nx">dozens</span><span class="p">,</span><span class="w"> </span><span class="nx">or</span><span class="w"> </span><span class="nx">more</span><span class="p">.</span>
+<span class="w">                </span><span class="nx">And</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nx">some</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">good</span><span class="p">,</span><span class="w"> </span><span class="nx">none</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">them</span><span class="w"> </span><span class="nx">were</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">recipe</span><span class="w"> </span><span class="nx">that</span><span class="w"> </span><span class="nx">would</span><span class="w"> </span><span class="nx">make</span>
+<span class="w">                </span><span class="nx">me</span><span class="w"> </span><span class="nx">stop</span><span class="w"> </span><span class="nx">trying</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">others</span><span class="p">.</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">Paragraph</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">Little</span><span class="w"> </span><span class="nx">Lemon</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Switch</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">Little</span><span class="w"> </span><span class="nx">Lemon</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Switch</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Page&quot;</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">When</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">comes</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">dough</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Content</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;Page&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Title</span><span class="p">&gt;</span><span class="nx">When</span><span class="w"> </span><span class="nx">it</span><span class="w"> </span><span class="nx">comes</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">dough</span><span class="p">&lt;/</span><span class="nt">Title</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Content</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="c1">// using memoization: https://react.dev/reference/react/useMemo#skipping-re-rendering-of-components</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">memo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span>
-      <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span>
-      <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
-<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="p">}}</span>
-    <span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Header</span> <span class="p">/&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">Page</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span>
+            <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span>
+            <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">                </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}}</span>
+        <span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Header</span><span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">Page</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">});</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">Root</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeProvider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Root</span><span class="p">;</span>
@@ -582,34 +581,35 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 </pre></div>
 </div>
 <p>The context provider is defined as a component with the ‘{children}’ prop.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{}</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <h5 a><strong><code>ThemeContext.js</code></strong></h5>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">createContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useContext</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">ThemeContext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createContext</span><span class="p">(</span><span class="kc">undefined</span><span class="p">);</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Give the child component a `theme` state</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Give the child component a `theme` state</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;light&quot;</span><span class="p">);</span>
 
-<span class="w">  </span><span class="c1">// Return a `ThemeContext.Provider` component that receives an object</span>
-<span class="w">  </span><span class="c1">// as its value prop, with a `theme` string and a `toggleTheme` function</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="c1">// https://react.dev/reference/react/createContext#provider</span>
-<span class="w">    </span><span class="c1">// Wrap your components into a context provider to specify</span>
-<span class="w">    </span><span class="c1">// the value of this context for all components inside:</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span>
-      <span class="na">value</span><span class="o">=</span><span class="p">{{</span>
-<span class="w">        </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">toggleTheme</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">(</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;dark&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">),</span>
-<span class="w">      </span><span class="p">}}</span>
-    <span class="p">&gt;</span>
-<span class="w">      </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Return a `ThemeContext.Provider` component that receives an object</span>
+<span class="w">    </span><span class="c1">// as its value prop, with a `theme` string and a `toggleTheme` function</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="c1">// https://react.dev/reference/react/createContext#provider</span>
+<span class="w">        </span><span class="c1">// Wrap your components into a context provider to specify</span>
+<span class="w">        </span><span class="c1">// the value of this context for all components inside:</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span>
+            <span class="na">value</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">                </span><span class="nx">theme</span><span class="o">:</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">toggleTheme</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTheme</span><span class="p">(</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;dark&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">),</span>
+<span class="w">            </span><span class="p">}}</span>
+        <span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">ThemeContext</span><span class="p">.</span><span class="na">Provider</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="c1">// Change `useTheme` so that it returns `useContext(ThemeContext);`</span>
@@ -618,7 +618,7 @@ In this app, I’ve created a basic light/dark theme switcher using React Contex
 
 <span class="c1">// export const ThemeProvider = ({ children }) =&gt; children;</span>
 <span class="c1">// export const useTheme = () =&gt; ({ theme: &quot;light&quot; });</span>
-<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="nx">ThemeProvider</span><span class="p">,</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">};</span>
 </pre></div>
 </div>
 </section>
@@ -633,25 +633,25 @@ to bundle the component with the custom CSS.</p>
 </div>
 <h5 a><strong><code>./Switch/index.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s2">&quot;./Styles.css&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../ThemeContext&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">useTheme</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;../ThemeContext&quot;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">Switch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">// Use the useTheme hook to get access to `theme` and `toggleTheme`</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// Use the useTheme hook to get access to `theme` and `toggleTheme`</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">theme</span><span class="p">,</span><span class="w"> </span><span class="nx">toggleTheme</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useTheme</span><span class="p">();</span>
 
-<span class="w">  </span><span class="c1">// Add an `onChange` prop to the input element. When them element changes,</span>
-<span class="w">  </span><span class="c1">// the `toggleTheme` function should be invoked</span>
-<span class="w">  </span><span class="c1">// Change the `checked` prop to be true or false based on the `theme` state.</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;switch&quot;</span><span class="p">&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">input</span>
-        <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
-        <span class="na">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">}</span>
-        <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleTheme</span><span class="p">}</span>
-      <span class="p">/&gt;</span>
-<span class="w">      </span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;slider round&quot;</span> <span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-<span class="w">  </span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Add an `onChange` prop to the input element. When them element changes,</span>
+<span class="w">    </span><span class="c1">// the `toggleTheme` function should be invoked</span>
+<span class="w">    </span><span class="c1">// Change the `checked` prop to be true or false based on the `theme` state.</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;switch&quot;</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">input</span>
+                <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span>
+                <span class="na">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">theme</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;light&quot;</span><span class="p">}</span>
+                <span class="na">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleTheme</span><span class="p">}</span>
+            <span class="p">/&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;slider round&quot;</span><span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Switch</span><span class="p">;</span>
@@ -669,9 +669,9 @@ to bundle the component with the custom CSS.</p>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
 <span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-<span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
-<span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
 <span class="p">);</span>
 
 <span class="c1">// If you want to start measuring performance in your app, pass a function</span>

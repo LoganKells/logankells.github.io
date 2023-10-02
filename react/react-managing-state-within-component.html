@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Updating State with Arrow Functions &#8212; Logan Kells Software Engineer &amp; MSCS Candidate</title>
+    <title>Managing State Within a React Component &#8212; Logan Kells Software Engineer &amp; MSCS Candidate</title>
   
   
   
@@ -69,12 +69,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'react/react-update-state-with-arrow-function';</script>
-    <link rel="canonical" href="https://logankells.com/react/react-update-state-with-arrow-function.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'react/react-managing-state-within-component';</script>
+    <link rel="canonical" href="https://logankells.com/react/react-managing-state-within-component.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Managing State Within a React Component" href="react-managing-state-within-component.html" />
-    <link rel="prev" title="Rendering a list in React" href="react-render-list.html" />
+    <link rel="next" title="Android Apps I’ve Created" href="../android_development/overview-android-development.html" />
+    <link rel="prev" title="Updating State with Arrow Functions" href="react-update-state-with-arrow-function.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -205,8 +205,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="react-user-form-example.html">Creating React User Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-render-list.html">Rendering a list in React</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Updating State with Arrow Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Managing State Within a React Component</a></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +302,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Freact/react-update-state-with-arrow-function.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Freact/react-managing-state-within-component.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +332,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/react/react-update-state-with-arrow-function.md" target="_blank"
+      <li><a href="../_sources/react/react-managing-state-within-component.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -414,7 +414,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Updating State with Arrow Functions</h1>
+    <h1>Managing State Within a React Component</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,10 +427,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">Index.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -442,14 +441,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="updating-state-with-arrow-functions">
-<h1>Updating State with Arrow Functions<a class="headerlink" href="#updating-state-with-arrow-functions" title="Permalink to this heading">#</a></h1>
-<p><em>Last Updated: September 26, 2023</em></p>
-<p><a class="reference external" href="https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-update-state-with-arrow-function">My project source code is available here</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="managing-state-within-a-react-component">
+<h1>Managing State Within a React Component<a class="headerlink" href="#managing-state-within-a-react-component" title="Permalink to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>We can update state in React using arrow functions. In this example, we are updating the state of a user object by
-iterating the <code class="docutils literal notranslate"><span class="pre">id</span></code> property each time a button is clicked.</p>
+<p>This guide will show you how to manage state within a React component.
+It will also show you how to update state using the <code class="docutils literal notranslate"><span class="pre">setState</span></code> method.
+Finally, we use the <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook to control when the component re-renders.</p>
 </section>
 <section id="files">
 <h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h2>
@@ -457,85 +455,78 @@ iterating the <code class="docutils literal notranslate"><span class="pre">id</s
 <h3>App.js<a class="headerlink" href="#app-js" title="Permalink to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The user object <code class="docutils literal notranslate"><span class="pre">data</span></code> is using the <code class="docutils literal notranslate"><span class="pre">useState()</span></code> hook. The <code class="docutils literal notranslate"><span class="pre">id</span></code> property is being updated using the <code class="docutils literal notranslate"><span class="pre">updateData()</span></code>
-callback function.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">setData</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Logan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Kells&quot;</span><span class="p">});</span>
-<span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">clickCount</span><span class="p">,</span><span class="w"> </span><span class="nx">setClickCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">updateData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">setClickCount</span><span class="p">(</span><span class="o">++</span><span class="nx">clickCount</span><span class="p">);</span>
-<span class="w">    </span><span class="nx">setData</span><span class="p">((</span><span class="nx">prevValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{...</span><span class="nx">prevValue</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">clickCount</span><span class="p">};</span>
+<p>When the user clicks the button, the <code class="docutils literal notranslate"><span class="pre">spendGiftCard</span></code> function is called.</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">spendGiftCard</span><span class="p">}&gt;</span><span class="nx">Spend</span><span class="w"> </span><span class="nx">Gift</span><span class="w"> </span><span class="nx">Card</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This changes the component state</p>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">spendGiftCard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setGiftCard</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="p">...</span><span class="nx">prev</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your coupon has been used.&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">instructions</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please visit our restaurant to renew your gift card.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">};</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>We can see the arrow function is being used in the <code class="docutils literal notranslate"><span class="pre">setData()</span></code> function to update the <code class="docutils literal notranslate"><span class="pre">id</span></code> property of the <code class="docutils literal notranslate"><span class="pre">data</span></code>
-object.</p>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">setData</span><span class="p">((</span><span class="nx">prevValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{...</span><span class="nx">prevValue</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">clickCount</span><span class="p">};</span>
-<span class="p">});</span>
-</pre></div>
-</div>
-<p>Finally, note the useage of <code class="docutils literal notranslate"><span class="pre">useEffect()</span></code> to handle side effects.
-In this case, we are logging the <code class="docutils literal notranslate"><span class="pre">data</span></code> object to the console.
-In the below example, the object literal variable <code class="docutils literal notranslate"><span class="pre">data</span></code> is
-passed as the second parameter in an array.
-That means that the effect will only be re-run if the <code class="docutils literal notranslate"><span class="pre">data</span></code>
-changes between renders.</p>
+<p>Finally, we use the <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook to control when the component re-renders.
+We update the document title when the <code class="docutils literal notranslate"><span class="pre">giftCard</span></code> object changes.</p>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Gift Available!&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Welcome!&quot;</span><span class="p">;</span>
+<span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">giftCard</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <h5 a><strong><code>App.js</code></strong></h5>
-<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">logo</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./logo.svg&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="s2">&quot;./App.css&quot;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">setData</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Logan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Kells&quot;</span><span class="p">});</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">[</span><span class="nx">clickCount</span><span class="p">,</span><span class="w"> </span><span class="nx">setClickCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
-
-<span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">updateData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">setClickCount</span><span class="p">(</span><span class="o">++</span><span class="nx">clickCount</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">setData</span><span class="p">((</span><span class="nx">prevValue</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{...</span><span class="nx">prevValue</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">clickCount</span><span class="p">};</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">giftCard</span><span class="p">,</span><span class="w"> </span><span class="nx">setGiftCard</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Jennifer&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Smith&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Free dinner for 4 guests&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">instructions</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;To use your coupon, click the button below.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">spendGiftCard</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">setGiftCard</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="p">...</span><span class="nx">prev</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">valid</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your coupon has been used.&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">instructions</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please visit our restaurant to renew your gift card.&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">};</span>
 <span class="w">        </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Gift Available!&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Welcome!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">giftCard</span><span class="p">]);</span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App&quot;</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-header&quot;</span><span class="p">&gt;</span>
-<span class="w">                </span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="p">{</span><span class="nx">logo</span><span class="p">}</span> <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-logo&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;logo&quot;</span><span class="p">/&gt;</span>
-<span class="w">                </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">                    </span><span class="nx">Edit</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="nx">src</span><span class="o">/</span><span class="nx">App</span><span class="p">.</span><span class="nx">js</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">save</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">reload</span><span class="p">.</span>
-<span class="w">                </span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="w">                </span><span class="p">&lt;</span><span class="nt">a</span>
-                    <span class="na">className</span><span class="o">=</span><span class="s">&quot;App-link&quot;</span>
-                    <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://reactjs.org&quot;</span>
-                    <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span>
-                    <span class="na">rel</span><span class="o">=</span><span class="s">&quot;noopener noreferrer&quot;</span>
-                <span class="p">&gt;</span>
-<span class="w">                    </span><span class="nx">Learn</span><span class="w"> </span><span class="nx">React</span>
-<span class="w">                </span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="w">            </span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">updateData</span><span class="p">}&gt;</span><span class="nx">Update</span><span class="w"> </span><span class="nx">Data</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;40px&quot;</span><span class="p">}}&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="nx">Gift</span><span class="w"> </span><span class="nx">Card</span><span class="w"> </span><span class="nx">Page</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">                </span><span class="nx">Customer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">firstName</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">lastName</span><span class="p">}</span>
+<span class="w">            </span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;{</span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">text</span><span class="p">}&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;{</span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">instructions</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">giftCard</span><span class="p">.</span><span class="nx">valid</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">                </span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">spendGiftCard</span><span class="p">}&gt;</span><span class="nx">Spend</span><span class="w"> </span><span class="nx">Gift</span><span class="w"> </span><span class="nx">Card</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">            </span><span class="p">)}</span>
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="p">}</span>
-
-<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="index-js">
-<h3>Index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
+<h3>index.js<a class="headerlink" href="#index-js" title="Permalink to this heading">#</a></h3>
 <h5 a><strong><code>index.js</code></strong></h5>
 <div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-dom/client&#39;</span><span class="p">;</span>
@@ -545,9 +536,9 @@ changes between renders.</p>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">));</span>
 <span class="nx">root</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-<span class="w">    </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
-<span class="w">        </span><span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">&lt;</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">App</span> <span class="p">/&gt;</span>
+<span class="w">  </span><span class="p">&lt;/</span><span class="nt">React</span><span class="p">.</span><span class="na">StrictMode</span><span class="p">&gt;</span>
 <span class="p">);</span>
 
 <span class="c1">// If you want to start measuring performance in your app, pass a function</span>
@@ -557,14 +548,6 @@ changes between renders.</p>
 </pre></div>
 </div>
 </section>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a></p></li>
-<li><p><a class="reference external" href="https://react.dev/reference/react/useState#updating-objects-and-arrays-in-state">https://react.dev/reference/react/useState#updating-objects-and-arrays-in-state</a></p></li>
-<li><p><a class="reference external" href="https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-update-state-with-arrow-function">My project source code is available here</a></p></li>
-</ul>
 </section>
 </section>
 
@@ -599,20 +582,20 @@ changes between renders.</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="react-render-list.html"
+       href="react-update-state-with-arrow-function.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Rendering a list in React</p>
+        <p class="prev-next-title">Updating State with Arrow Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="react-managing-state-within-component.html"
+       href="../android_development/overview-android-development.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Managing State Within a React Component</p>
+        <p class="prev-next-title">Android Apps I’ve Created</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -634,10 +617,9 @@ changes between renders.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">Index.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-js">index.js</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
