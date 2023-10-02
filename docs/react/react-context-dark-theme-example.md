@@ -1,6 +1,6 @@
 # Creating A Light/Dark Themed React App Using Context
 
-*Last Updated: September 26, 2023*
+*Last Updated: October 2, 2023*
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-light-dark-theme-using-context)
 

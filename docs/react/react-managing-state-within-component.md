@@ -1,5 +1,9 @@
 # Managing State Within a React Component
 
+*Last Updated: October 2, 2023*
+
+- [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-managing-state-within-component)
+
 ## Overview
 
 This guide will show you how to manage state within a React component.
@@ -114,6 +118,6 @@ reportWebVitals();
 ```
 
 ## References
-
+- [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-managing-state-within-component)
 - https://react.dev/reference/react/useEffect
 - https://react.dev/reference/react/useState
