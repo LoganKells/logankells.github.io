@@ -112,3 +112,8 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 ```
+
+## References
+
+- https://react.dev/reference/react/useEffect
+- https://react.dev/reference/react/useState

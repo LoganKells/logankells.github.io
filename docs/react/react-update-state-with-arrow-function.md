@@ -128,3 +128,5 @@ reportWebVitals();
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 - https://react.dev/reference/react/useState#updating-objects-and-arrays-in-state
 - [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-update-state-with-arrow-function)
+- https://react.dev/reference/react/useEffect
+- https://react.dev/reference/react/useState
