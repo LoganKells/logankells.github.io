@@ -26,6 +26,7 @@ parts:
     - file: react/react-context-dark-theme-example
     - file: react/react-render-list
     - file: react/react-update-state-with-arrow-function
+    - file: react/react-managing-state-within-component
 - caption: Android Development
   chapters:
   - file: android_development/overview-android-development
