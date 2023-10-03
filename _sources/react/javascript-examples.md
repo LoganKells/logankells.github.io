@@ -1,5 +1,7 @@
 # JavaScript Examples
 
+*Last Updated: September 29, 2023*
+
 This page contains code examples of JavaScript language features
 I've used in my projects.
 
