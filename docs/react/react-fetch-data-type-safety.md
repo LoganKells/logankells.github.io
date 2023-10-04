@@ -99,7 +99,7 @@ function BitcoinData() {
     disclaimer: "",
     time: { updated: "", updatedISO: "", updateduk: "" },
   });
-  function fetchData() {
+  async function fetchData() {
     fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
       .then((response) => response.json())
       .then((data) => setCoinData(data))
@@ -185,3 +185,4 @@ reportWebVitals();
 
 - [React TypeScript Cheatsheets](https://www.typescriptlang.org/static/TypeScript%20Types-ae199d69aeecf7d4a2704a528d0fd3f9.png)
 - [Coindesk public API](https://publicapis.io/coin-desk-api)
+- [MDN async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)

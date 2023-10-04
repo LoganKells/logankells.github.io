@@ -28,6 +28,7 @@ parts:
     - file: react/react-update-state-with-arrow-function
     - file: react/react-managing-state-within-component
     - file: react/react-fetch-data-type-safety
+    - file: react/react-custom-hook-use-previous
 - caption: Android Development
   chapters:
   - file: android_development/overview-android-development
