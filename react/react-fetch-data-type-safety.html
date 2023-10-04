@@ -73,7 +73,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://logankells.com/react/react-fetch-data-type-safety.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Android Apps I’ve Created" href="../android_development/overview-android-development.html" />
+    <link rel="next" title="Create a Custom Hook, usePrevious, in React" href="react-custom-hook-use-previous.html" />
     <link rel="prev" title="Managing State Within a React Component" href="react-managing-state-within-component.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -208,6 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Fetch Data with Type Safety in React</a></li>
+<li class="toctree-l2"><a class="reference internal" href="react-custom-hook-use-previous.html">Create a Custom Hook, usePrevious, in React</a></li>
 </ul>
 </li>
 </ul>
@@ -538,7 +539,7 @@ the <code class="docutils literal notranslate"><span class="pre">coinData</span>
 <span class="w">    </span><span class="nx">disclaimer</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">updated</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">updatedISO</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">updateduk</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="p">});</span>
-<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://api.coindesk.com/v1/bpi/currentprice.json&quot;</span><span class="p">)</span>
 <span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
 <span class="w">      </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCoinData</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
@@ -623,6 +624,7 @@ the <code class="docutils literal notranslate"><span class="pre">coinData</span>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.typescriptlang.org/static/TypeScript%20Types-ae199d69aeecf7d4a2704a528d0fd3f9.png">React TypeScript Cheatsheets</a></p></li>
 <li><p><a class="reference external" href="https://publicapis.io/coin-desk-api">Coindesk public API</a></p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">MDN async function</a></p></li>
 </ul>
 </section>
 </section>
@@ -667,11 +669,11 @@ the <code class="docutils literal notranslate"><span class="pre">coinData</span>
       </div>
     </a>
     <a class="right-next"
-       href="../android_development/overview-android-development.html"
+       href="react-custom-hook-use-previous.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Android Apps I’ve Created</p>
+        <p class="prev-next-title">Create a Custom Hook, usePrevious, in React</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

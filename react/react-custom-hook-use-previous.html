@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>JavaScript Guides &#8212; Logan Kells Software Engineer &amp; MSCS Candidate</title>
+    <title>Create a Custom Hook, usePrevious, in React &#8212; Logan Kells Software Engineer &amp; MSCS Candidate</title>
   
   
   
@@ -69,12 +69,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'react/overview-javascript-guides';</script>
-    <link rel="canonical" href="https://logankells.com/react/overview-javascript-guides.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'react/react-custom-hook-use-previous';</script>
+    <link rel="canonical" href="https://logankells.com/react/react-custom-hook-use-previous.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="JavaScript Examples" href="javascript-examples.html" />
-    <link rel="prev" title="Behavioral Testing of BERT Model for Sentiment Analysis" href="../machine_learning/behavior-testing-bert-for-sentiment-analysis.html" />
+    <link rel="next" title="Android Apps I’ve Created" href="../android_development/overview-android-development.html" />
+    <link rel="prev" title="Fetch Data with Type Safety in React" href="react-fetch-data-type-safety.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -197,18 +197,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">React Web Development</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">JavaScript Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="overview-javascript-guides.html">JavaScript Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="javascript-examples.html">JavaScript Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="overview-react-guides.html">React Guides</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="overview-react-guides.html">React Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="react-user-form-example.html">Creating React User Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-context-dark-theme-example.html">Creating A Light/Dark Themed React App Using Context</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-render-list.html">Rendering a list in React</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-update-state-with-arrow-function.html">Updating State with Arrow Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-managing-state-within-component.html">Managing State Within a React Component</a></li>
 <li class="toctree-l2"><a class="reference internal" href="react-fetch-data-type-safety.html">Fetch Data with Type Safety in React</a></li>
-<li class="toctree-l2"><a class="reference internal" href="react-custom-hook-use-previous.html">Create a Custom Hook, usePrevious, in React</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Create a Custom Hook, usePrevious, in React</a></li>
 </ul>
 </li>
 </ul>
@@ -304,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Freact/overview-javascript-guides.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/LoganKells/logankells.github.io/issues/new?title=Issue%20on%20page%20%2Freact/react-custom-hook-use-previous.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/react/overview-javascript-guides.md" target="_blank"
+      <li><a href="../_sources/react/react-custom-hook-use-previous.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +403,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -414,11 +416,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>JavaScript Guides</h1>
+    <h1>Create a Custom Hook, usePrevious, in React</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useprevious-js">usePrevious.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,16 +444,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="javascript-guides">
-<h1>JavaScript Guides<a class="headerlink" href="#javascript-guides" title="Permalink to this heading">#</a></h1>
-<p>I’m a full stack web developer with experience
-in React, JavaScript, and TypeScript.
-I’ve documented a few tutorials for React.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="javascript-examples.html"><span class="doc std std-doc">JavaScript Examples - code examples of JavaScript language</span></a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="create-a-custom-hook-useprevious-in-react">
+<h1>Create a Custom Hook, usePrevious, in React<a class="headerlink" href="#create-a-custom-hook-useprevious-in-react" title="Permalink to this heading">#</a></h1>
+<p><em>Last Updated: October 4, 2023</em></p>
+<p><a class="reference external" href="https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-custom-hook-usePrevious">My project source code is available here</a></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>In React, a custom hook is a JavaScript function whose name starts with <code class="docutils literal notranslate"><span class="pre">use</span></code> and that may call other hooks.
+For example, the custom hook created in this guide, <code class="docutils literal notranslate"><span class="pre">usePrevious</span></code>, is a custom hook that calls the <code class="docutils literal notranslate"><span class="pre">useRef</span></code> hook
+and the <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook from React.</p>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h2>
+<section id="useprevious-js">
+<h3>usePrevious.js<a class="headerlink" href="#useprevious-js" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">usePrevious</span></code> custom hook that calls the <code class="docutils literal notranslate"><span class="pre">useRef</span></code> hook
+and the <code class="docutils literal notranslate"><span class="pre">useEffect</span></code> hook from React.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Custom React hooks should go in a new module file and be named with the <code class="docutils literal notranslate"><span class="pre">use</span></code> prefix, in this case
+<code class="docutils literal notranslate"><span class="pre">usePrevious.js</span></code>.</p>
+<p>The value input parameter <code class="docutils literal notranslate"><span class="pre">val</span></code> is stored in a JavaScript object literal,
+prevVal, and returned when the hook is called. The hook is called
+anytime the val value changes in the component because useEffect is
+observing the dependency <code class="docutils literal notranslate"><span class="pre">[val]</span></code>.</p>
 </div>
+<h5 a><strong><code>usePrevious.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useRef</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * usePrevious is a custom hook. </span>
+<span class="cm"> * */</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">usePrevious</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">prevVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useRef</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;next previous value:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">val</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">prevVal</span><span class="p">.</span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">val</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">val</span><span class="p">]);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">prevVal</span><span class="p">.</span><span class="nx">current</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">usePrevious</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="app-js">
+<h3>App.js<a class="headerlink" href="#app-js" title="Permalink to this heading">#</a></h3>
+<p>The application component that uses the <code class="docutils literal notranslate"><span class="pre">usePrevious</span></code> custom hook to display
+the <code class="docutils literal notranslate"><span class="pre">prevDay</span></code> of the week offset
+from the active <code class="docutils literal notranslate"><span class="pre">day</span></code>.</p>
+<h5 a><strong><code>App.js</code></strong></h5>
+<div class="highlight-jsx notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="p">,</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useRef</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;react&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">usePrevious</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;./usePrevious&quot;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">day</span><span class="p">,</span><span class="w"> </span><span class="nx">setDay</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">&quot;Monday&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">prevDay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usePrevious</span><span class="p">(</span><span class="nx">day</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getNextDay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">day</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Monday&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setDay</span><span class="p">(</span><span class="s2">&quot;Tuesday&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">day</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Tuesday&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setDay</span><span class="p">(</span><span class="s2">&quot;Wednesday&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">day</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Wednesday&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setDay</span><span class="p">(</span><span class="s2">&quot;Thursday&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">day</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Thursday&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setDay</span><span class="p">(</span><span class="s2">&quot;Friday&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">day</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">&quot;Friday&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">setDay</span><span class="p">(</span><span class="s2">&quot;Monday&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">};</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;40px&quot;</span><span class="w"> </span><span class="p">}}&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">        </span><span class="nx">Today</span><span class="w"> </span><span class="nx">is</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">day</span><span class="p">}</span>
+<span class="w">        </span><span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">prevDay</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="nx">Previous</span><span class="w"> </span><span class="nx">work</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="nx">was</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">prevDay</span><span class="p">}&lt;/</span><span class="nt">span</span><span class="p">&gt;}</span>
+<span class="w">      </span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="w">      </span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">getNextDay</span><span class="p">}&gt;</span><span class="nx">Get</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="nx">day</span><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://react.dev/learn/reusing-logic-with-custom-hooks">Reusing Logic with Custom Hooks | React Docs</a></p></li>
+<li><p><a class="reference external" href="https://www.coursera.org/learn/advanced-react/ungradedLab/d3fkC/exercise-create-your-own-custom-hook-useprevious">Create your own custom hook, usePrevious | Meta</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -471,20 +568,20 @@ I’ve documented a few tutorials for React.</p>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../machine_learning/behavior-testing-bert-for-sentiment-analysis.html"
+       href="react-fetch-data-type-safety.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Behavioral Testing of BERT Model for Sentiment Analysis</p>
+        <p class="prev-next-title">Fetch Data with Type Safety in React</p>
       </div>
     </a>
     <a class="right-next"
-       href="javascript-examples.html"
+       href="../android_development/overview-android-development.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">JavaScript Examples</p>
+        <p class="prev-next-title">Android Apps I’ve Created</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,6 +591,26 @@ I’ve documented a few tutorials for React.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useprevious-js">usePrevious.js</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#app-js">App.js</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
