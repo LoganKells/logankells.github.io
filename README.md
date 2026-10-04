@@ -8,8 +8,10 @@ The project is built using Jupyter Book and deployed to Github Pages.
 
 ## 1. Install
 
-Install project dependencies using Pip.
+Install project dependencies using Python 3.14 and Poetry. The supported interpreter
+is installed by Homebrew at `/opt/homebrew/opt/python@3.14/bin/python3`.
 
+- `poetry env use /opt/homebrew/opt/python@3.14/bin/python3`
 - `poetry lock`
 - `poetry install`
 
@@ -17,7 +19,7 @@ Install project dependencies using Pip.
 
 Run the following commands from the root of the `origin/main` branch.
 
-- `jupyter-book build docs/`
+- `poetry run jupyter-book build docs/`
 
 ## 3. Deploy
 

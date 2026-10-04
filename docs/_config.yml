@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Logan Kells Software Engineer & MSCS Candidate
+title: Logan Kells Software Engineer
 author: Logan Kells
 email: lkells@outlook.com
 logo: images/logo.svg
@@ -11,14 +11,13 @@ logo: images/logo.svg
 html:
 #  announcement: "⚠️I'm seeking a Full Stack Software Engineer Role!⚠️"
 #  favicon: images/favicon.ico
-  google_analytics_id: G-VP9YT90WXT
   home_page_in_navbar: true
 #  use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
   baseurl: https://logankells.com/
   analytics:
-    google_analytics_id = 'G-VP9YT90WXT'
+    google_analytics_id: G-VP9YT90WXT
 
 # Bibliography settings
 #bibtex_bibfiles:
@@ -114,13 +113,9 @@ sphinx:
 #            "floor": ["\\lfloor#1\\rfloor", 1]
 #            "bmat": ["\\left[\\begin{array}"]
 #            "emat": ["\\end{array}\\right]"]
-      nb_custom_formats:
-        .Rmd:
-          - jupytext.reads
-          - fmt: Rmd
-      rediraffe_branch: 'main'
-      rediraffe_redirects:
-        index.md: intro.md
+    rediraffe_branch: 'main'
+    rediraffe_redirects:
+      index.md: intro.md
     #    content-types/intro.md: file-types/intro.md
     #    content-types/index.md: file-types/index.md
     #    content-types/markdown.md: file-types/markdown.md
@@ -130,7 +125,7 @@ sphinx:
     #    content-types/restructuredtext.md: file-types/restructuredtext.md
     #    customize/toc.md: structure/toc.md
     #    customize/_toc.md: structure/_toc.md
-      sd_fontawesome_latex: True
+    sd_fontawesome_latex: True
     extra_extensions:
       - sphinx_click.ext
       - sphinx_inline_tabs
