@@ -11,22 +11,36 @@ The project is built using Jupyter Book and deployed to Github Pages.
 Install project dependencies using Python 3.14 and Poetry. The supported interpreter
 is installed by Homebrew at `/opt/homebrew/opt/python@3.14/bin/python3`.
 
-- `poetry env use /opt/homebrew/opt/python@3.14/bin/python3`
-- `poetry lock`
-- `poetry install`
+```powershell
+poetry env use /opt/homebrew/opt/python@3.14/bin/python3
+poetry lock
+poetry install
+poetry check
+```
 
-## 2. Build
+## 2. Run locally
+
+This will run the project using jupyter-book server.
+
+```powershell
+make run
+```
+
+## 3. Build and run static site locally
+
+```powershell
+make run-build
+```
+
+## 4. Deploy
 
 Run the following commands from the root of the `origin/main` branch.
 
-- `poetry run jupyter-book build docs/`
+After building the project it will deploy to the `gh-pages` branch. This branch should be configured in the Github Pages settings.
 
-## 3. Deploy
-
-After building the project, deploy to the `gh-pages` branch. This branch should be configured in the 
-Github Pages settings.
-
-- `ghp-import -n -p -f docs/_build/html`
+```powershell
+make deploy
+```
 
 # References
 

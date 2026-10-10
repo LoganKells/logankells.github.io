@@ -1,6 +1,6 @@
 # Logan Kells
 
-*[Contact Me](https://logankells.com/intro.html#contact-me)*
+*[Contact Me](../intro.md)*
 
 ## Education
 
@@ -8,11 +8,11 @@
 
 #### Master of Science (MS) in Computer Science
 
-**2021 - Present**
+**2021 - 2026**
 
-- 3.89 GPA.
-- Coursework includes Online Learning and Optimization, Deep Learning, and Natural Language Processing, Android
-  Programming, Advanced Operating Systems, Advanced Linear Algebra for Computing, and Data Processing at Scale.
+- 3.85 GPA.
+- Coursework includes Optimization, Advances in Deep Learning, Online Learning and Optimization, Deep Learning, and Natural Language Processing, Android
+  Programming, Advanced Operating Systems, Advanced Linear Algebra for Computing, Data Processing at Scale, and Case Studies in Machine Learning.
 
 ### The Georgia Institute of Technology
 
@@ -23,48 +23,47 @@
 - 3.69 GPA with Highest Honors.
 - Coursework includes Computing for Engineers, Linear Algebra, Calculus III, and Differential Equations.
 
-## Technical Skills
-
-- **Programming Languages:** JavaScript, TypeScript, Python, Kotlin, Java, HTML, CSS, XML
-- **Browser and Web Server:** React, React Bootstrap, Bootstrap
-- **Application Server:** Node.js, Django, Flask
-- **Database:** MySQL, MariaDB, SQLite, PostgreSQL
-- **DevOps:** Jenkins CI/CD, Private Cloud Platform, Git, Jira, Cloud Foundry, Webpack
-- **Mobile App Dev:** Android Studio
-- **Testing:** Jest, Pytest, JUnit
-- **Other Tools & Libraries:** npm, Kerberos, PyPoetry, NumPy, PyTorch, Pandas
-
 ## Employment Experience
 
 ### JPMorgan Chase & Co.
 
 #### Software Engineer III
 
-**2021 - Present**
+**2026 - Present**
 
-- On the EIS Risk Automation Team in Infrastructure Platforms, I develop dynamic websites to automate intelligence for
-  our organization.
-- Created dynamic websites using TypeScript and React for client side and Django for server side on the private cloud in
-  enterprise.
-- Created seven (7) server side applications for automation that exceeded JPMC Production app requirements including
-  APIs, test coverage, maintainability, performance, and security using Django, Python, SQLite, and MySQL on private
-  cloud platform.
-- Created data pipelines and endpoints to automate business workflows and generate custom reports for my organization
-  and users.
-- Implemented the CI/CD Jenkins pipelines for thirteen (13) applications to deploy and horizontally scale on the private
-  cloud.
+Agentic Workflow Team for Employee Platforms:
+- Software Engineer on the Agentic and GenAI Workflow team in Employee Platforms at JPMC.
+- Develop Generative AI and Agentic workflows to improve the efficiency and output of internal work-streams.
+- Collaborate closely with data scientists and software engineers to deliver end-to-end software solutions for employees.
+- Build and deploy scalable applications on AWS using tools such as ECS, S3, Redis, Bedrock, Lambda, API Gateway, Aurora Postgres, etc.
+
+#### Software Engineer III
+
+**2022 - 2026**
+
+Strategic Data Integrations Team for Employee Platforms:
+- I lead software developers to create Public Cloud distributed services, applications, and full stack web apps to improve and automate HR and help the JPMC workforce.
+
+#### Software Engineer III
+
+**2021 - 2022**
+
+EIS Risk Automation Team for Infrastructure Platforms:
+- Developed dynamic websites to automate intelligence for our organization.
+- Created dynamic websites using TypeScript and React for client side and Django for server side on the private cloud (cloud foundry) in enterprise.
+- Created seven (7) server side applications for automation that exceeded JPMC Production app requirements including APIs, test coverage, maintainability, performance, and security using Django, Python, SQLite, and MySQL on private cloud platform.
+- Created data pipelines and endpoints to automate business workflows and generate custom reports for my organization and users.
+- Implemented the CI/CD Jenkins pipelines for thirteen (13) applications to deploy and horizontally scale on the private cloud.
 - Implemented migration to MySQL of eleven (11) web applications on the private cloud.
-- Achieved 90%+ increase in unit and integration tests for thirteen (13) applications using Jest and PyTest for
-  automated coverage reports.
-- Implemented Docker containers for thirteen (13) applications to automate environment, dependency, and runtime
-  installation.
+- Achieved 90%+ increase in unit and integration tests for thirteen (13) applications using Jest and PyTest for automated coverage reports.
+- Implemented Docker containers for thirteen (13) applications to automate environment, dependency, and runtime installation.
 - Facilitated trainings, code reviews, and pair programming for five (5) new SWE team members and two (2) interns.
 
-### Pinnacle
+### Pinnacle Technology
 
 #### Business Analyst
 
-**2021**
+**2021 - 2021**
 
 - On the Newton Software Scrum Team, I created programs and models for optimizing equipment inspections for engineering
   users. I helped to deploy the programs as RESTful APIs for customer web applications using Python, Flask, and T-SQL.
@@ -74,14 +73,16 @@
 
 #### Product Development Engineer
 
-**2020-2021**
+**2020 - 2021**
 
 - On the Newton Software Scrum Team, I developed Python programs for engineers to calculate reliability models and
   supported CI/CD with regression tests. I assisted developers to deploy the programs as RESTful APIs for web apps.
 
+### Pinnacle
+
 #### Senior Technical Specialist
 
-**2019-2020**
+**2019 - 2020**
 
 - Led team implementing the engineering software for $40 million in projects in Europe and NA. Facilitated project
   reviews utilizing software.
@@ -92,18 +93,25 @@
 
 #### Project Lead
 
-**2017-2019**
+**2017 - 2019**
 
-- Managed \$5 million engineering project. Improved cost at completion by \$300 thousand over one year by optimizing
-  engineering execution and quality assurance processes. Closed with +12% gross margin improvement and achieved customer
-  project close sign-off.
+- Managed \$5 million engineering project. Improved cost at completion by \$300 thousand over one year by optimizing engineering execution and quality assurance processes. Closed with +12% gross margin improvement and achieved customer project close sign-off.
 
 #### Project Engineer
 
-**2015-2017**
+**2015 - 2017**
 
-- Executed a risk-based inspection engineering project and a drafting project at Sinclair refinery as a project
-  engineer.
+- Executed a risk-based inspection engineering project and a drafting project at Sinclair refinery as a project engineer.
+
+## Technical Skills
+
+- **Programming Languages:** JavaScript, TypeScript, Python, Java
+- **Browser and Web Server:** React, React Bootstrap, Bootstrap
+- **Application Server:** Node.js, Flask, FastAPI
+- **Database:** PostgreSQL, MySQL, MariaDB, SQLite
+- **DevOps:** Jenkins CI/CD, AWS Public Cloud, Private Cloud Platform, Git, Jira, Cloud Foundry, Webpack
+- **Testing:** Jest, Pytest, JUnit
+- **Other Tools & Libraries:** npm, PyPoetry, NumPy, Pandas, PyTorch
 
 ## Project Highlights
 
@@ -118,35 +126,24 @@
   improvements to the BERT NLP model with augmentation and tuning.
 
 ## Continued CS and Developer Training and Certifications
-
-- React Basics (2023). React.js library for front end web development using React components, hooks for state
-  management, data hierarchy using props, and passing data deeply using React context. Building Single Page
-  Application (SPA) using React and Webpack to compile for production server deployment and local development server.
-  Client side rendering pipeline.
-- Programming with JavaScript (2023). ES6 JavaScript programming paradigms. Node.js asynchronous JS runtime. Jest
-  testing library. Object oriented and functional programming methods in JavaScript; pure functions.
-- Intro to Front-End Development (2023). Built menu website using responsive web design, HTML, CSS, and Bootstrap.
-- Online Learning and Optimization (2023). Convex optimization such as gradient descent and its variants. Algorithms for
-  online learning such as follow the leader and weighted majority. Multi-Armed Bandit problem and its variants.
-- Android Programming (2023). App development using MVC architecture including web APIs and Google services.
-- Operating Systems (2022). Linux CPU virtualization, memory virtualization, storage virtualization, Linux Kernel
-  Scheduler, processes, threads, architecture, containers, developing system calls and modifying built in system calls
-  and the Linux Kernel.
-- Natural Language Processing (2022). Sentiment Analysis, Optimization, Logistic Regression, Deep Averaging Networks,
-  Hidden Markov Models, Beam Search, Viterbi, Sequence Labeling, Tagging with Classifiers, RNNs, LSTMs, Language Models.
-- Deep Learning (2021). Convolutional Neural Networks, Computer Vision, Reinforcement Learning, Classification.
-- Advanced Linear Algebra for Computing (2021). Fundamental Theorem of Algebra, Singular Value Decomposition, Linear
-  Least Squares, Sparse Linear Systems, Descent Methods for Optimization, Eigenvalues and Eigenvectors, Algorithms for
-  computing the Singular Value Decomposition.
-- Professional Scrum Master I (2021). Scrum Master demonstrates experience to apply Scrum professionally.
-- Programming Fundamentals III in Java (2020). Data structures, algorithms and OOP at Lone Star College in Java 8.
-- Ordered Data Structures in C++ (2020). Arrays, linked lists, queues, stacks, and algorithms for data structures in
-  C++.
-- Object Oriented Data Structures in C++ (2020). C++ memory model, object oriented programming, and data structures.
-- Professional Python Programming (2019). Four part professional certificate in Python programming.
-- Computing in Python IV Objects and Algorithms (2019). Control Structures, sorting, and search algorithms in Python.
-- Computing in Python III Data Structures (2019). Arrays, linked lists, queues, & algorithms for data structures in
-  Python.
-- Computing in Python II Control Structures (2019). Conditionals, loops, functions, encapsulation, error handling in
-  Python.
-- Computing in Python I Procedural Programming (2019). Python Scripting, types, and objects.
+- **Optimization (2026)**: Developed optimization skillset in linear programming and convex optimization. Explored maximization and minimization problems with constraints with application of convex sets, convex functions, convex programs, linear programs, and duality in linear programs. Learned and applied semidefinite programming, robust linear programming (duality), strong duality, KKT conditions. Developed applications covering problems such as two person 0-sum games, max-flow min-cut, maximum entropy. Investigated methods such as Frank Wofle, Coordinate Descent, Gradient Descent, Line Search, Subgradient Descent, Proximal Gradient Descent, Newton Method, Quasi-Newton Methods, Barrier Method, Accelerated Gradient Descent, Stochastic Gradient Descent (SGD), Mini-Batch SGD, and Variance Reduction in SGD.
+- **Advances in Deep Learning (2025)**: Explored the inner workings of the most advanced deep learning models. Trained and fine-tuned advanced deep learning model and developed practical hands-on experience in DL.
+- **Case Studies in Machine Learning (2024)**: Prepared datasets for ML use cases. Developed ML scripts using Python to explore ML concepts and algorithms. Applied ML methods to solve real world problems.
+- **React Basics (2023)**: React.js library for front end web development using React components, hooks for state management, data hierarchy using props, and passing data deeply using React context. Building Single Page Application (SPA) using React and Webpack to compile for production server deployment and local development server. Client side rendering pipeline.
+- **Programming with JavaScript (2023)**: ES6 JavaScript programming paradigms. Node.js asynchronous JS runtime. Jest testing library. Object oriented and functional programming methods in JavaScript; pure functions.
+- **Intro to Front-End Development (2023)**: Built menu website using responsive web design, HTML, CSS, and Bootstrap.
+- **Online Learning and Optimization (2023)**: Convex optimization such as gradient descent and its variants. Algorithms for online learning such as follow the leader and weighted majority. Multi-Armed Bandit problem and its variants.
+- **Android Programming (2023)**: App development using MVC architecture including web APIs and Google services.
+- **Operating Systems (2022)**: Linux CPU virtualization, memory virtualization, storage virtualization, Linux Kernel Scheduler, processes, threads, architecture, containers, developing system calls and modifying built in system calls and the Linux Kernel.
+- **Natural Language Processing (2022)**: Sentiment Analysis, Optimization, Logistic Regression, Deep Averaging Networks, Hidden Markov Models, Beam Search, Viterbi, Sequence Labeling, Tagging with Classifiers, RNNs, LSTMs, Language Models.
+- **Deep Learning (2021)**: Convolutional Neural Networks, Computer Vision, Reinforcement Learning, Classification.
+- **Advanced Linear Algebra for Computing (2021)**: Fundamental Theorem of Algebra, Singular Value Decomposition, Linear Least Squares, Sparse Linear Systems, Descent Methods for Optimization, Eigenvalues and Eigenvectors, Algorithms for computing the Singular Value Decomposition.
+- **Professional Scrum Master I (2021)** Scrum Master demonstrates experience to apply Scrum professionally.
+- **Programming Fundamentals III in Java (2020)**: Data structures, algorithms and OOP at Lone Star College in Java 8.
+- **Ordered Data Structures in C++ (2020)**: Arrays, linked lists, queues, stacks, and algorithms for data structures in C++.
+- **Object Oriented Data Structures in C++ (2020)**: C++ memory model, object oriented programming, and data structures.
+- **Professional Python Programming (2019)**: Four part professional certificate in Python programming.
+- **Computing in Python IV Objects and Algorithms (2019)**: Control Structures, sorting, and search algorithms in Python.
+- **Computing in Python III Data Structures (2019)**: Arrays, linked lists, queues, & algorithms for data structures in Python.
+- **Computing in Python II Control Structures (2019)**: Conditionals, loops, functions, encapsulation, error handling in Python.
+- **Computing in Python I Procedural Programming (2019)**: Python Scripting, types, and objects.
