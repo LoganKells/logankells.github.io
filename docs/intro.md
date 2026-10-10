@@ -10,7 +10,7 @@ tutorials, my resume, and my contact information.
 ```
 
 ## About me
-My name is Logan Kells. I'm a Software Engineer 3 and an M.S. Computer Science Candidate at the University of Texas at Austin.
+My name is Logan Kells. I'm a Software Engineer III and an M.S. Computer Science Graduate from the University of Texas at Austin.
 
 :::{admonition} Resume
 :class: tip
@@ -33,7 +33,3 @@ Check out the content pages below to see what I've been working on.
 # Acknowledgements
 
 This website was built using Jupyter Book and deployed to Github Pages.
-
-:::{only} html
-[![Jupyter Book Badge](./images/badge.svg)](https://jupyterbook.org)
-:::
