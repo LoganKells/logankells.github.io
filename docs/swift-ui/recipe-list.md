@@ -1,4 +1,10 @@
-# Recipe List
+---
+title: Recipe List
+date: 2024-02-14
+authors:
+  - name: Logan Kells
+---
+
 This is a Recipe List app created using SwiftUI for iOS.
 
 ## Usage

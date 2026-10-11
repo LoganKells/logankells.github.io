@@ -1,8 +1,11 @@
-# Managing State Within a React Component
+---
+title: Managing State Within a React Component
+date: 2023-10-02
+authors:
+  - name: Logan Kells
+---
 
-*Last Updated: October 2, 2023*
-
-- [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-managing-state-within-component)
+[My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-managing-state-within-component)
 
 ## Overview
 

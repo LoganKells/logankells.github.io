@@ -1,6 +1,9 @@
-# JavaScript Examples
-
-*Last Updated: September 29, 2023*
+---
+title: JavasScript Examples
+date: 2023-09-29
+authors:
+  - name: Logan Kells
+---
 
 This page contains code examples of JavaScript language features
 I've used in my projects.

@@ -1,6 +1,9 @@
-# Fetch Data with Type Safety in React
-
-*Last Updated: October 3, 2023*
+---
+title: Fetch Data with Type Safety in React
+date: 2023-10-03
+authors:
+  - name: Logan Kells
+---
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-fetching-data-type-safety)
 
