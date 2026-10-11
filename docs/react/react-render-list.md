@@ -1,6 +1,9 @@
-# Rendering a list in React
-
-*Last Updated: October 2, 2023*
+---
+title: Rendering a list in React
+date: 2023-10-02
+authors:
+  - name: Logan Kells
+---
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-basic-list)
 

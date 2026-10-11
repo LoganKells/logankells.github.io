@@ -1,6 +1,9 @@
-# Android Programming (CS 386P) Review
-
-Date: 1/18/2023
+---
+title: Android Programming (CS 386P) Review
+date: 2023-01-18
+authors:
+  - name: Logan Kells
+---
 
 ## Course Information
 [University of Texas Android Programming](https://www.cs.utexas.edu/graduate-program/masters-program/online-option/courses/android-programming)

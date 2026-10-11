@@ -1,6 +1,16 @@
-# Logan Kells
+---
+title: Resume for Logan Kells
+date: 2026-10-10
+authors:
+  - name: Logan Kells
+---
 
-*[Contact Me](../intro.md)*
+:::{admonition} Contact Me
+Please feel free to contact me on LinkedIn or by Email.
+- Through my LinkedIn page: [LinkedIn - Logan Kells](https://www.linkedin.com/in/logankells/)
+- By email: [LKells@outlook.com](mailto:lkells@outlook.com)
+- Through my GitHub page: [https://github.com/LoganKells](https://github.com/LoganKells)
+:::
 
 ## Education
 
