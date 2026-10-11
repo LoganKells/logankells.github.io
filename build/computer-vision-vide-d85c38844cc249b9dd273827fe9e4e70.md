@@ -1,11 +1,20 @@
-# Computer Vision Video Game AI
-
-*Last updated: August 10, 2021*
-
-:::{admonition} Authors
-:class: tip
-Logan Kells, Buvaneshwaran T, Amir Ebrahimi, Pranav Kayastha
-:::
+---
+title: Computer Vision Video Game AI
+date: 2021-08-10
+authors:
+  - name: Logan Kells
+    affiliations:
+      - The University of Texas at Austin
+  - name: Buvaneshwaran T
+    affiliations:
+      - The University of Texas at Austin
+  - name: Amir Ebrahimi
+    affiliations:
+      - The University of Texas at Austin
+  - name: Pranav Kayastha
+    affiliations:
+      - The University of Texas at Austin
+---
 
 :::{note}
 This is a summary of Deep Learning computer vision game AI for playing a 2 versus 2 hockey game.

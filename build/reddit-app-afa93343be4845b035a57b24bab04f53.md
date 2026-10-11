@@ -1,3 +1,0 @@
-# Reddit Android App
-
-TBD

@@ -1,6 +1,14 @@
-# City Explorer Android App
-
-*Last updated December 2, 2022*
+---
+title: City Explorer Android App
+date: 2022-12-02
+authors:
+  - name: Logan Kells
+    affiliations:
+      - The University of Texas at Austin
+  - name: Michail Mersinias
+    affiliations:
+      - The University of Texas at Austin
+---
 
 The City Explorer Android application is a planning system for travelers.
 At its core, the application enables users to optimize their planned

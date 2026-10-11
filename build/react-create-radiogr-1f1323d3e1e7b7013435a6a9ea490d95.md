@@ -1,6 +1,9 @@
-# Create a RadioGroup Component Dynamically
-
-*Last Updated: October 18, 2023*
+---
+title: Create a RadioGroup Component Dynamically
+date: 2023-10-18
+authors:
+  - name: Logan Kells
+---
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-build-radio-group-component)
 

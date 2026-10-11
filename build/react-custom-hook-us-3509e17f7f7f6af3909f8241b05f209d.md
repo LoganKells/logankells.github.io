@@ -1,6 +1,9 @@
-# Create a Custom Hook, usePrevious, in React
-
-*Last Updated: October 4, 2023*
+---
+title: Create a Custom Hook, usePrevious, in React
+date: 2023-10-04
+authors:
+  - name: Logan Kells
+---
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-custom-hook-usePrevious)
 

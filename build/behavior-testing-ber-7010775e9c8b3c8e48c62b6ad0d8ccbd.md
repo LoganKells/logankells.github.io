@@ -1,8 +1,14 @@
-# Behavioral Testing of BERT Model for Sentiment Analysis
-
-Authors: Logan Kells, Nathan Casaneda
-
-*Last updated: December 10, 2021*
+---
+title: Behavioral Testing of BERT Model for Sentiment Analysis
+date: 2021-12-10
+authors:
+  - name: Logan Kells
+    affiliations:
+      - The University of Texas at Austin
+  - name: Nathan Casaneda
+    affiliations:
+      - The University of Texas at Austin
+---
 
 [Formatted PDF file is available at this link.](https://github.com/LoganKells/behavioral-testing-bert-for-sentiment-analysis/blob/master/Behavioral%20Testing%20of%20BERT%20Model%20for%20Sentiment%20Analysis.pdf)
 

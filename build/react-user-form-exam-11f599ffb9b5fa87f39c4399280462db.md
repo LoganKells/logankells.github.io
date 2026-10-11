@@ -1,6 +1,9 @@
-# Creating React User Forms
-
-*Last Updated: October 2, 2023*
+---
+title: Creating React User Forms
+date: 2023-10-02
+authors:
+  - name: Logan Kells
+---
 
 [My project source code is available here](https://github.com/LoganKells/meta-front-end-developer/tree/develop/course-6-advanced-react/lab-create-registration-form).
 

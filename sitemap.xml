@@ -5,28 +5,16 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/resume-logan-kells</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/overview-deep-learning</loc>
+    <loc>http://localhost:3000/resume</loc>
   </url>
   <url>
     <loc>http://localhost:3000/computer-vision-video-game-ai</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/overview-nlp</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/behavior-testing-bert-for-sentiment-analysis</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/overview-javascript-guides</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/javascript-examples</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/overview-react-guides</loc>
   </url>
   <url>
     <loc>http://localhost:3000/react-user-form-example</loc>
@@ -53,22 +41,10 @@
     <loc>http://localhost:3000/react-create-radiogroup-component</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/overview-android-development</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/city-explorer-app</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/reddit-app</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/overview-swift-ui</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/recipe-list</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/overview-course-reviews</loc>
   </url>
   <url>
     <loc>http://localhost:3000/review-android-programming</loc>
