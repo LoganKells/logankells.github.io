@@ -45,7 +45,6 @@ project:
     - title: Android Development
       children:
         - file: docs/android-development/city-explorer-app.md
-        - file: docs/android-development/reddit-app.md
     - title: iOS App Development
       children:
         - file: docs/swift-ui/recipe-list.md
